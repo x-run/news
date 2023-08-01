@@ -1,8 +1,17 @@
+@php
+    $id = Auth::user()->id;
+    $userid = App\Models\User::find($id);
+    $status = $userid->status;
+@endphp
 
 
 <div class="left-side-menu">
 
 <div class="h-100" data-simplebar>
+
+@php 
+    $hideMenu = ($status == 'active') ? false: true;
+@endphp
 
     <!-- User box -->
 
@@ -22,26 +31,45 @@
 
             <li class="menu-title mt-2">Menu</li>
 
-          
 
+@if($hideMenu)
+@else
             <li>
                 <a href="#sidebarEcommerce" data-bs-toggle="collapse">
                     <i class="mdi mdi-cart-outline"></i>
-                    <span> Ecommerce </span>
+                    <span> Category </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarEcommerce">
                     <ul class="nav-second-level">
                         <li>
-                            <a href="ecommerce-dashboard.html">Dashboard</a>
+                            <a href="{{ route('all.category')}}">All Category</a>
                         </li>
                         <li>
-                            <a href="ecommerce-products.html">Products</a>
+                            <a href="{{ route('add.category')}}">Add Category</a>
                         </li>
                     </ul>
                 </div>
             </li>
 
+            <li>
+                <a href="#sidebarEcommerce" data-bs-toggle="collapse">
+                    <i class="mdi mdi-cart-outline"></i>
+                    <span> SunCategory </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarEcommerce">
+                    <ul class="nav-second-level">
+                        <li>
+                            <a href="{{ route('all.subcategory')}}">All SubCategory</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('add.subcategory')}}">Add SubCategory</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+@endif
             <li>
                 <a href="#sidebarCrm" data-bs-toggle="collapse">
                     <i class="mdi mdi-account-multiple-outline"></i>
@@ -93,27 +121,29 @@
                 </div>
             </li>
 
-            <li class="menu-title mt-2">Custom</li>
+@if($hideMenu)
+@else
+            <li class="menu-title mt-2">Setting</li>
 
             <li>
                 <a href="#sidebarAuth" data-bs-toggle="collapse">
                     <i class="mdi mdi-account-circle-outline"></i>
-                    <span> Auth Pages </span>
+                    <span> Setting Admin User </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarAuth">
                     <ul class="nav-second-level">
                         <li>
-                            <a href="auth-login.html">Log In</a>
+                            <a href="{{ route('all.admin')}}">All Admin</a>
                         </li>
                         <li>
-                            <a href="auth-login.html">Log In</a>
+                            <a href="{{ route('add.admin')}}">Add Admin</a>
                         </li>
      
                     </ul>
                 </div>
             </li>
-
+@endif
             <li>
                 <a href="#sidebarExpages" data-bs-toggle="collapse">
                     <i class="mdi mdi-text-box-multiple-outline"></i>

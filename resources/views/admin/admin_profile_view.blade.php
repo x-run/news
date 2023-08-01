@@ -42,7 +42,14 @@
                         <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span class="ms-2">{{ $adminData->phone }}</span></p>
                     
                         <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span class="ms-2">{{ $adminData->email }}</span></p>
-                    </div>                                                      
+                    </div>   
+                    <ul class="social-list list-inline mt-3 mb-0">
+                        <li class="list-inline-item">
+                            <a href="{{ $adminData->insta_url}}"  target="_blank" rel="noopener noreferrer" >
+                                <img src="{{ asset('frontend/assets/images/instagram.png')}}" alt="" style="width: 45px;">
+                            </a>
+                        </li>
+                    </ul>                                                      
                 </div>                                 
             </div> <!-- end card -->    
         </div> <!-- end col-->
@@ -58,25 +65,32 @@
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="firstname" class="form-label">User Name</label>
-                                            <input type="text" name="username" class="form-control" id="firstname" value="{{ $adminData->username}}">
+                                            <input type="text" name="username" class="form-control" id="firstname" value="{{ $adminData->username}}" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="lastname" class="form-label">Name</label>
-                                            <input type="text" name="name" class="form-control" id="lastname" value="{{ $adminData->name}}">
+                                            <input type="text" name="name" class="form-control" id="lastname" value="{{ $adminData->name}}" required>
                                         </div>
                                     </div> <!-- end col -->
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="lastname" class="form-label">Email</label>
-                                            <input type="email" name="email" class="form-control" id="lastname" value="{{ $adminData->email}}">
+                                            <input type="email" name="email" class="form-control" id="lastname" value="{{ $adminData->email}}" required>
                                         </div>
                                     </div> <!-- end col -->
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="lastname" class="form-label">Phone</label>
                                             <input type="text" name="phone" class="form-control" id="lastname" value="{{ $adminData->phone}}">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="social-insta" class="form-label">Instagram</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fab fa-instagram"></i></span>
+                                                <input type="text" name="insta_url" class="form-control" id="social-insta" value="{{ $adminData->insta_url}}">
+                                            </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="mb-3">
@@ -87,7 +101,7 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="example-fileinput" class="form-label"></label>
-                                                <img id="showImage" src="{{ (!empty($adminData->photo)) ? url('upload/admin_images'.$adminData->photo): url('upload/no_image.jpg')}}" class="rounded-circle avatar-lg img-thumbnail" 
+                                                <img id="showImage" src="{{ (!empty($adminData->photo)) ? url('upload/admin_images/' . $adminData->photo): url('upload/no_image.jpg') }}" class="rounded-circle avatar-lg img-thumbnail" 
                                                 alt="profile-image">
                                             </div>
                                         </div>
