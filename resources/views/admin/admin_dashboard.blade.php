@@ -34,7 +34,21 @@
         <link href="{{ asset('backend/assets/libs/datatables.net-select-bs5/css//select.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- datatable css end-->
 
+        <!-- InputTags css-->
+        <link href="{{ asset('backend/assets/libs/mohithg-switchery/switchery.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend/assets/libs/multiselect/css/multi-select.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend/assets/libs/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend/assets/libs/selectize/css/selectize.bootstrap3.css') }}" rel="stylesheet" type="text/css" />
+        <!-- InputTags css end-->
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link href="{{ asset('backend/assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-style"/>
+
+        <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>tinymce.init({
+            selector:'textarea',
+            language:'ja'});</script>
 
     </head>
 
@@ -144,5 +158,18 @@
         }
         @endif 
         </script>
+
+        <!-- InputTags js-->
+        <script src="{{ asset('backend/assets/libs/selectize/js/standalone/selectize.min.js') }}"></script>
+        <script src="{{ asset('backend/assets/libs/mohithg-switchery/switchery.min.js') }}"></script>
+        <script src="{{ asset('backend/assets/libs/multiselect/js/jquery.multi-select.js') }}"></script>
+        <script src="{{ asset('backend/assets/libs/select2/js/select2.min.js') }}"></script>
+        <script src="{{ asset('backend/assets/libs/devbridge-autocomplete/jquery.autocomplete.min.js') }}"></script>
+        <script src="{{ asset('backend/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js') }}"></script>
+        <script src="{{ asset('backend/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
+
+        <!-- Init js-->
+        <script src="{{ asset('backend/assets/js/pages/form-advanced.init.js') }}"></script>
+ <!-- InputTags js-->
     </body>
 </html> 

@@ -8,6 +8,7 @@ use App\Http\Middleware\RedirectIfAuthenticated;
 
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\NewsPostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -91,6 +92,7 @@ Route::controller(CategoryController::class)->group(function(){
     Route::get('/edit/subcategory/{id}','EditSubCategory')->name('edit.subcategory');
     Route::post('/update/subcategory','UpdateSubCategory')->name('subcategory.update');
     Route::get('/delete/subcategory/{id}','DeleteSubCategory')->name('delete.subcategory');
+    Route::get('/subcategory/ajax/{category_id}','GetSubCategory');
 });
 
 //Admin User all Route
@@ -104,5 +106,11 @@ Route::controller(AdminController::class)->group(function(){
 
     Route::get('/inactive/admin/user/{id}','InactiveAdminUser')->name('inactive.admin.user');
     Route::get('/active/admin/user/{id}','ActiveAdminUser')->name('active.admin.user');
+});
+
+//News Post all Route
+Route::controller(NewsPostController::class)->group(function(){
+    Route::get('/all/news/post','AllNewsPost')->name('all.news.post');
+    Route::get('/add/news/post','AddNewsPost')->name('add.news.post');
 });
 }); //End Admin Middleware

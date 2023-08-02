@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\SubCategory;
 
-class categorycontroller extends Controller
+class CategoryController extends Controller
 {
     public function AllCategory(){
 
@@ -130,6 +130,12 @@ class categorycontroller extends Controller
         );
 
         return redirect()->back()->with($notification);
+    }
+
+    public function GetSubCategory($category_id){
+
+        $subcat = SubCategory::where('category_id',$category_id)->orderBy('subcategory_name','ASC')->get();
+        return json_encode($subcat);
     }
 
 }
