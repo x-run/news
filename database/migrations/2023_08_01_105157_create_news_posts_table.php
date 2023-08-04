@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('news_title_slug');
             $table->string('image');
             $table->text('news_details');
-            $table->text('tags');
+            $table->text('tags')->nullable();
             $table->integer('breaking_news')->nullable();
             $table->integer('top_slider')->nullable();
             $table->integer('first_section_three')->nullable();
