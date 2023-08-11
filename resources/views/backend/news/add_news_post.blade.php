@@ -95,7 +95,7 @@
                         <div>
                             <div class="form-group col-md-6 mb-3">
                                 <label for="inputEmail4" class="form-label">Tags</label>
-                                <input type="text" class="selectize-close-btn" value="沖縄" >
+                                <input type="text" name="tags" class="selectize-close-btn" value="沖縄" >
                             </div>
                         </div>
 

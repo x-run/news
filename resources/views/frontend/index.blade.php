@@ -17,282 +17,82 @@
 <div class="col-lg-7 col-md-7">
 <div class="themesbazar_led_active owl-carousel owl-loaded owl-drag">
 
+@php
+$news_slider = App\Models\NewsPost::where('status',1)->where('top_slider',1)->orderBy('created_at','DESC')->limit(7)->get();
+@endphp
 
-
-<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1578px, 0px, 0px); transition: all 1s ease 0s; width: 3684px;"><div class="owl-item cloned" style="width: 506.25px; margin-right: 20px;"><div class="secOne_newsContent">
+<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1578px, 0px, 0px); transition: all 1s ease 0s; width: 3684px;">
+  
+@foreach($news_slider as $slider)
+  <div class="owl-item" style="width: 506.25px; margin-right: 20px;"><div class="secOne_newsContent">
 <div class="sec-one-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"></a>
+<a href="{{ url('news/details/'.$slider->id.'/'.$slider->news_title_slug) }}"><img class="lazyload" src="{{ asset($slider->image) }}"></a>
 <h6 class="sec-small-cat">
-<a href=" ">
-8 September 2022, 09:31 PM
+<a href="{{ url('news/details/'.$slider->id.'/'.$slider->news_title_slug) }}">
+{{ $slider->created_at->format('M d Y')}}
 </a>
 </h6>
 <h1 class="sec-one-title">
-<a href=" ">India restricts rice exports, could fuel food inflation</a>
+<a href="{{ url('news/details/'.$slider->id.'/'.$slider->news_title_slug) }}">{{ $slider->news_title}}</a>
 </h1>
 </div>
-</div></div><div class="owl-item cloned" style="width: 506.25px; margin-right: 20px;"><div class="secOne_newsContent">
-<div class="sec-one-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
-<h6 class="sec-small-cat">
-<a href=" ">
-8 September 2022, 09:31 PM
-</a>
-</h6>
-<h1 class="sec-one-title">
-<a href=" ">India restricts rice exports, could fuel food inflation</a>
-</h1>
-</div>
-</div></div><div class="owl-item" style="width: 506.25px; margin-right: 20px;"><div class="secOne_newsContent">
-<div class="sec-one-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h6 class="sec-small-cat">
-<a href=" ">
-8 September 2022, 09:31 PM
-</a>
-</h6>
-<h1 class="sec-one-title">
-<a href=" ">India restricts rice exports, could fuel food inflation</a>
-</h1>
-</div>
-</div></div><div class="owl-item active" style="width: 506.25px; margin-right: 20px;"><div class="secOne_newsContent">
-<div class="sec-one-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
-<h6 class="sec-small-cat">
-<a href=" ">
-8 September 2022, 09:31 PM
-</a>
-</h6>
-<h1 class="sec-one-title">
-<a href=" ">India restricts rice exports, could fuel food inflation </a>
-</h1>
-</div>
-</div></div><div class="owl-item" style="width: 506.25px; margin-right: 20px;"><div class="secOne_newsContent">
-<div class="sec-one-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h6 class="sec-small-cat">
-<a href=" ">
-8 September 2022, 09:31 PM
-</a>
-</h6>
-<h1 class="sec-one-title">
-<a href=" ">India restricts rice exports, could fuel food inflation </a>
-</h1>
-</div>
-</div></div><div class="owl-item cloned" style="width: 506.25px; margin-right: 20px;"><div class="secOne_newsContent">
-<div class="sec-one-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h6 class="sec-small-cat">
-<a href=" ">
-8 September 2022, 09:31 PM
-</a>
-</h6>
-<h1 class="sec-one-title">
-<a href=" ">India restricts rice exports, could fuel food inflation </a>
-</h1>
-</div>
-</div></div><div class="owl-item cloned" style="width: 506.25px; margin-right: 20px;"><div class="secOne_newsContent">
-<div class="sec-one-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h6 class="sec-small-cat">
-<a href=" ">
-8 September 2022, 09:31 PM
-</a>
-</h6>
-<h1 class="sec-one-title">
-<a href=" ">India restricts rice exports, could fuel food inflation</a>
-</h1>
-</div>
-</div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="fa-solid fa-angle-left"></i></button>
+</div></div>
+@endforeach
+</div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="fa-solid fa-angle-left"></i></button>
 <button type="button" role="presentation" class="owl-next"><i class="fa-solid fa-angle-right"></i></button></div><div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></div>
 
  
 </div>
 <div class="col-lg-5 col-md-5">
  
- 
+@php
+$section_three = App\Models\NewsPost::where('status',1)->where('first_section_three',1)->whereNotIn('id',$news_slider->pluck('id'))->orderBy('created_at','DESC')->limit(3)->get();
+@endphp 
+
+@foreach($section_three as $three)
 <div class="secOne-smallItem">
 <div class="secOne-smallImg">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
+<a href="{{ url('news/details/'.$three->id.'/'.$three->news_title_slug) }}"><img class="lazyload" src="{{ asset($three->image)}}"  ></a>
 <h5 class="secOne_smallTitle">
-<a href=" ">Why people are industry hopping </a>
+<a href="{{ url('news/details/'.$three->id.'/'.$three->news_title_slug) }}">{{ $three->news_title }} </a>
 </h5>
 </div>
 </div>
-<div class="secOne-smallItem">
-<div class="secOne-smallImg">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secOne_smallTitle">
-<a href=" ">Why people are industry hopping </a>
-</h5>
-</div>
-</div>
-<div class="secOne-smallItem">
-<div class="secOne-smallImg">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secOne_smallTitle">
-<a href=" ">Why people are industry hopping</a>
-</h5>
-</div>
-</div>
+@endforeach
+
+
+
 
 </div>
 </div>
 <div class="sec-one-item2">
 <div class="row">
+
+@php
+$section_nine = App\Models\NewsPost::where('status',1)->where('first_section_nine',1)->whereNotIn('id',$section_three->pluck('id'))->orderBy('created_at','DESC')->limit(9)->get();
+@endphp 
+
+@foreach($section_nine as $nine)
 <div class="themesBazar-3 themesBazar-m2">
 <div class="sec-one-wrpp2">
 <div class="secOne-news">
 <div class="secOne-image2">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
+<a href="{{ url('news/details/'.$nine->id.'/'.$nine->news_title_slug)}} "><img class="lazyload" src="{{ asset($nine->image)}}"  ></a>
 </div>
 <h4 class="secOne-title2">
-<a href=" ">Why people are industry hopping </a>
+<a href="{{ url('news/details/'.$nine->id.'/'.$nine->news_title_slug)}} ">{{ $nine->news_title }}</a>
 </h4>
 </div>
 <div class="cat-meta">
-<a href=" "> <i class="lar la-newspaper"></i>
-8 September 2022
+<a href="{{ url('news/details/'.$nine->id.'/'.$nine->news_title_slug)}} "> <i class="lar la-newspaper"></i>
+{{ $nine->created_at->format('M d Y')}}
 </a>
 </div>
 </div>
 </div>
-<div class="themesBazar-3 themesBazar-m2">
-<div class="sec-one-wrpp2">
-<div class="secOne-news">
-<div class="secOne-image2">
- <a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-</div>
-<h4 class="secOne-title2">
-<a href=" ">Why people are industry hopping </a>
-</h4>
-</div>
-<div class="cat-meta">
-<a href=" "> <i class="lar la-newspaper"></i>
-8 September 2022
-</a>
-</div>
-</div>
-</div>
- <div class="themesBazar-3 themesBazar-m2">
-<div class="sec-one-wrpp2">
-<div class="secOne-news">
-<div class="secOne-image2">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-</div>
-<h4 class="secOne-title2">
-<a href=" ">Why people are industry hopping </a>
-</h4>
-</div>
-<div class="cat-meta">
-<a href=" "> <i class="lar la-newspaper"></i>
-8 September 2022
-</a>
-</div>
-</div>
-</div>
-<div class="themesBazar-3 themesBazar-m2">
-<div class="sec-one-wrpp2">
-<div class="secOne-news">
-<div class="secOne-image2">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-</div>
-<h4 class="secOne-title2">
-<a href=" ">Why people are industry hopping</a>
-</h4>
-</div>
-<div class="cat-meta">
-<a href=" "> <i class="lar la-newspaper"></i>
-8 September 2022
-</a>
-</div>
-</div>
-</div>
-<div class="themesBazar-3 themesBazar-m2">
-<div class="sec-one-wrpp2">
-<div class="secOne-news">
-<div class="secOne-image2">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-</div>
-<h4 class="secOne-title2">
-<a href=" ">Why people are industry hopping </a>
-</h4>
-</div>
-<div class="cat-meta">
-<a href=" "> <i class="lar la-newspaper"></i>
-8 September 2022
-</a>
-</div>
-</div>
-</div>
-<div class="themesBazar-3 themesBazar-m2">
-<div class="sec-one-wrpp2">
-<div class="secOne-news">
-<div class="secOne-image2">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-</div>
-<h4 class="secOne-title2">
-<a href=" ">Why people are industry hopping </a>
-</h4>
-</div>
-<div class="cat-meta">
-<a href=" "> <i class="lar la-newspaper"></i>
-8 September 2022
-</a>
-</div>
-</div>
-</div>
-<div class="themesBazar-3 themesBazar-m2">
-<div class="sec-one-wrpp2">
-<div class="secOne-news">
-<div class="secOne-image2">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-</div>
-<h4 class="secOne-title2">
- <a href=" ">Why people are industry hopping</a>
-</h4>
-</div>
-<div class="cat-meta">
-<a href=" "> <i class="lar la-newspaper"></i>
-8 September 2022
-</a>
-</div>
-</div>
-</div>
-<div class="themesBazar-3 themesBazar-m2">
-<div class="sec-one-wrpp2">
-<div class="secOne-news">
-<div class="secOne-image2">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-</div>
-<h4 class="secOne-title2">
-<a href=" ">Why people are industry hopping</a>
-</h4>
-</div>
-<div class="cat-meta">
-<a href=" "> <i class="lar la-newspaper"></i>
-8 September 2022
-</a>
-</div>
-</div>
-</div>
-<div class="themesBazar-3 themesBazar-m2">
-<div class="sec-one-wrpp2">
-<div class="secOne-news">
-<div class="secOne-image2">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-</div>
-<h4 class="secOne-title2">
-<a href=" ">Why people are industry hopping </a>
-</h4>
-</div>
-<div class="cat-meta">
-<a href=" "> <i class="lar la-newspaper"></i>
-8 September 2022
-</a>
-</div>
-</div>
-</div>
+@endforeach
+
+
 </div>
 </div>
 </div>
@@ -338,129 +138,27 @@
 <div class="tab-content" id="pills-tabContent">
 <div class="tab-pane active show  fade" id="recent" role="tabpanel" aria-labelledby="recent">
 <div class="news-titletab">
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<a href=" " class="tab-icon"><i class="la la-play"></i></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
 
+@foreach($newnewspost as $item)
 <div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug)}}"><img class="lazyload" src="{{ asset($item->image)}}"  ></a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug)}}" class="tab-icon"><i class="la la-play"></i></a>
+<h4 class="tab_hadding"><a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug)}}">{{ $item->news_title}}</a></h4>
 </div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
+@endforeach
+
 </div>
 </div>
 <div class="tab-pane fade" id="popular" role="tabpanel" aria-labelledby="popular">
 <div class="news-titletab">
 
+@foreach($newspopular as $item)
 <div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<a href=" " class="tab-icon"><i class="la la-play"></i></a>
-<h4 class="tab_hadding"><a href=" ">Nasa’s Artemis Moon rocket second launch  </a></h4>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug)}}"><img class="lazyload" src="{{ asset($item->image)}}"  ></a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug)}}" class="tab-icon"><i class="la la-play"></i></a>
+<h4 class="tab_hadding"><a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug)}}">{{ $item->news_title}}</a></h4>
 </div>
-
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<a href=" " class="tab-icon"><i class="la la-play"></i></a>
-<h4 class="tab_hadding"><a href=" ">Nasa’s Artemis Moon rocket second launch  </a></h4>
-</div>
-
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<a href=" " class="tab-icon"><i class="la la-play"></i></a>
-<h4 class="tab_hadding"><a href=" ">Nasa’s Artemis Moon rocket second launch  </a></h4>
-</div>
-
-
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<a href=" " class="tab-icon"><i class="la la-play"></i></a>
-<h4 class="tab_hadding"><a href=" ">Nasa’s Artemis Moon rocket second launch  </a></h4>
-</div>
-
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">Nasa’s Artemis Moon rocket second launch  </a></h4>
-</div>
-
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<a href=" " class="tab-icon"><i class="la la-play"></i></a>
-<h4 class="tab_hadding"><a href=" ">Nasa’s Artemis Moon rocket second launch  </a></h4>
-</div>
-
+@endforeach
 
 
 

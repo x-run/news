@@ -120,3 +120,9 @@ Route::controller(NewsPostController::class)->group(function(){
     Route::get('/active/news/post/{id}','ActiveNewsPost')->name('active.news.post');
 });
 }); //End Admin Middleware
+
+///Access for All 
+Route::get('/news/details/{id}/{slug}',[IndexController::class,'NewsDetails']);
+Route::get('/news/category/{id}/{slug}',[IndexController::class,'CatWiseNews']);
+
+///End Access for All

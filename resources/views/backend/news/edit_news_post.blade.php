@@ -47,11 +47,14 @@
                             <div class="form-group col-md-6 mb-3">
                                 <label for="inputEmail4" class="form-label">SubCategory Name</label>
                                 <select name="subcategory_id" class="form-select" id="example-select">
-                                    <option></option>
+
+                                    @if($newspost->subcateogy_id == NULL)
+                                    @else
                                     <option>Select SubCategory</option>
                                     @foreach($subcategories as $subcategory)
                                     <option value="{{ $subcategory->id}}" {{ $subcategory->id == $newspost->subcategory_id ? 'selected' : ''}}>{{ $subcategory->subcategory_name}}</option>
                                     @endforeach
+                                    @endif
                                 </select>
                             </div>
                         </div>
@@ -102,7 +105,7 @@
                         <div>
                             <div class="form-group col-md-6 mb-3">
                                 <label for="inputEmail4" class="form-label">Tags</label>
-                                <input type="text" class="selectize-close-btn" value="{{ $newspost->tags}}" >
+                                <input type="text" name="tags" class="selectize-close-btn" value="{{ $newspost->tags}}" >
                             </div>
                         </div>
 
