@@ -30,6 +30,7 @@ return new class extends Migration
             $table->integer('status')->default(1);
             $table->integer('view_count')->nullable();
             $table->timestamps();
+            
         });
     }
 
