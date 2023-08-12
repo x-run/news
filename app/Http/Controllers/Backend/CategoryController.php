@@ -71,7 +71,7 @@ class CategoryController extends Controller
 
     public function AllSubCategory(){
 
-        $subcategories = SubCategory::latest()->get();
+        $subcategories = Subcategory::latest()->get();
         return view('backend.subcategory.subcategory_all',compact('subcategories'));
     }
 
@@ -83,7 +83,7 @@ class CategoryController extends Controller
 
     public function StoreSubCategory(Request $request){
 
-        SubCategory::insert([
+        Subcategory::insert([
             'category_id' => $request->category_id,
             'subcategory_name' => $request->subcategory_name,
             'subcategory_slug' => strtolower(str_replace(' ','-',$request->subcategory_name)),
@@ -99,14 +99,14 @@ class CategoryController extends Controller
 
     public function EditSubCategory($id){
         $categories = Category::latest()->get();
-        $subcategory = SubCategory::findOrFail($id);
+        $subcategory = Subcategory::findOrFail($id);
         return view('backend.subcategory.subcategory_edit',compact('categories','subcategory'));
     }
 
     public function UpdateSubCategory(Request $request){
         $subcat_id = $request->id;
 
-        SubCategory::findOrFail($subcat_id)->update([
+        Subcategory::findOrFail($subcat_id)->update([
             'category_id' => $request->category_id,
             'subcategory_name' => $request->subcategory_name,
             'subcategory_slug' => strtolower(str_replace(' ','-',$request->subcategory_name)),
@@ -122,7 +122,7 @@ class CategoryController extends Controller
 
     public function DeleteSubCategory($id){
         
-        SubCategory::findOrFail($id)->delete();
+        Subcategory::findOrFail($id)->delete();
 
         $notification = array(
             'message' => 'SubCategory Delete Successfully',
@@ -134,7 +134,7 @@ class CategoryController extends Controller
 
     public function GetSubCategory($category_id){
 
-        $subcat = SubCategory::where('category_id',$category_id)->orderBy('subcategory_name','ASC')->get();
+        $subcat = Subcategory::where('category_id',$category_id)->orderBy('subcategory_name','ASC')->get();
         return json_encode($subcat);
     }
 
