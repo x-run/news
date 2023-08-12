@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Models\SubCategory;
+use App\Models\subcategory;
 use App\Models\User;
 use App\Models\NewsPost;
 use Carbon\Carbon;
