@@ -79,7 +79,7 @@ $categories = App\Models\Category::orderBy('category_name','ASC')->limit(7)->get
 @foreach($categories as $category)
 <li id="menu-item-291" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-291 has-sub"><a href="{{ url('news/category/'.$category->id.'/'.$category->category_slug)}}">{{ $category->category_name}}</a>
 @php 
-$subcategories = App\Models\SubCategory::where('category_id',$category->id)->orderBy('subcategory_name','ASC')->get();
+$subcategories = App\Models\subcategory::where('category_id',$category->id)->orderBy('subcategory_name','ASC')->get();
 @endphp
 <ul class="sub-menu">
 @foreach($subcategories as $subcategory)
