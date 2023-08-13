@@ -42,7 +42,7 @@ $cdate = new DateTime();
             <div class="col-lg-12 col-md-12">
                 <div class="mobileLogo">
                     <a href=" " title="NewsFlash">
-                        <img src="{{ asset('frontend/')}}assets/images/footer_logo.gif" alt="Logo" title="Logo">
+                        <img src="{{ asset('frontend/assets/images/coca.png')}}" alt="Logo" title="Logo" style="width: 100px; height: 100px;">
                     </a>
                 </div>
                 <div class="stellarnav dark desktop">
@@ -65,7 +65,6 @@ $cdate = new DateTime();
                             <a href="{{ url('news/category/'.$category->id.'/'.$category->category_slug) }}">
                                 {{ $category->category_name }}
                             </a>
-        
                         </li>
                         @endforeach
 
