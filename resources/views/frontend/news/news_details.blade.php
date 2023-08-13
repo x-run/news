@@ -164,24 +164,25 @@
                 <a href=" ">Related News </a>
             </div>
             <div class="row">
-                @foreach($relatedNews as $item)
-                    <div class="themesBazar-3 themesBazar-m2">
-                        <div class="related-wrpp">
-                            <div class="related-image">
-                                <a href="{{url('news/details/'.$item->id.'/'.$item->news_title_slug)}}"><img class="lazyload" src="{{ asset($item->image)}}"  ></a>
-                            </div>
-                            <h4 class="related-title">
-                                <a href="{{url('news/details/'.$item->id.'/'.$item->news_title_slug)}}">{{ $item->news_title }}</a>
-                            </h4>
-                            <div class="related-meta">
-                                <a href="{{url('news/details/'.$item->id.'/'.$item->news_title_slug)}}"><i class="la la-tags"> </i>
-                                    {{ $item->created_at->format('1 M d Y')}}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
+				@foreach($relatedNews as $relatedItem)
+					<div class="themesBazar-3 themesBazar-m2">
+						<div class="related-wrpp">
+							<div class="related-image">
+								<a href="{{url('news/details/'.$relatedItem->id.'/'.$relatedItem->news_title_slug)}}"><img class="lazyload" src="{{ asset($relatedItem->image)}}"  ></a>
+							</div>
+							<h4 class="related-title">
+								<a href="{{url('news/details/'.$relatedItem->id.'/'.$relatedItem->news_title_slug)}}">{{ $relatedItem->news_title }}</a>
+							</h4>
+							<div class="related-meta">
+								<a href="{{url('news/details/'.$relatedItem->id.'/'.$relatedItem->news_title_slug)}}"><i class="la la-tags"> </i>
+									{{ $relatedItem->created_at->format('1 M d Y')}}
+								</a>
+							</div>
+						</div>
+					</div>
+				@endforeach
+			</div>
+
         </div>
         <div class="col-lg-4 col-md-4">
             <div class="sitebar-fixd" style="position: sticky; top: 0;">
