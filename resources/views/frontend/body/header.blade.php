@@ -65,6 +65,7 @@ $cdate = new DateTime();
                             <a href="{{ url('news/category/'.$category->id.'/'.$category->category_slug) }}">
                                 {{ $category->category_name }}
                             </a>
+                            <!-- >
                             @php
                             $subcategories = App\Models\Subcategory::where('category_id',$category->id)->orderBy('subcategory_name','ASC')->get();
                             @endphp
@@ -75,7 +76,7 @@ $cdate = new DateTime();
                                 </li>
                                 @endforeach
                             </ul>
-                            <a class="dd-toggle" href=" "><span class="icon-plus"></span></a>
+                            <a class="dd-toggle" href=" "><span class="icon-plus"></span></a><-->
                         </li>
                         @endforeach
 
