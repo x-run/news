@@ -175,7 +175,7 @@
                             </h4>
                             <div class="related-meta">
                                 <a href="{{url('news/details/'.$item->id.'/'.$item->news_title_slug)}}"><i class="la la-tags"> </i>
-                                    {{ $news->created_at->format('1 M d Y')}}
+                                    {{ $item->created_at->format('1 M d Y')}}
                                 </a>
                             </div>
                         </div>
