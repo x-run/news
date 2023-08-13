@@ -41,7 +41,7 @@ $cdate = new DateTime();
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="mobileLogo">
-                    <a href=" " title="NewsFlash">
+                    <a href="{{url('/')}}" title="NewsFlash">
                         <img src="{{ asset('frontend/assets/images/coca.png')}}" alt="Logo" title="Logo" style="width: 100px; height: 100px;">
                     </a>
                 </div>
