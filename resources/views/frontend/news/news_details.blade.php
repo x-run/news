@@ -52,7 +52,7 @@
             </div>
 
             <div class="single-page-add2">
-                <div class="themesBazar_widget"> <div class="textwidget"><p><img loading="lazy" class="aligncenter size-full wp-image-74" src="assets/images/biggapon-1.gif" alt="" width="100%" height="auto"></p>
+                <div class="themesBazar_widget"> <div class="textwidget"><p><img loading="lazy" class="aligncenter size-full wp-image-74" src="" alt="" width="100%" height="auto"></p>
                 </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                 @endforeach
             </div>
             <div class="single-add">
-                <div class="themesBazar_widget"> <div class="textwidget"><p><img loading="lazy" class="aligncenter size-full wp-image-74" src="assets/images/biggapon-1.gif" alt="" width="100%" height="auto"></p>
+                <div class="themesBazar_widget"> <div class="textwidget"><p><img loading="lazy" class="aligncenter size-full wp-image-74" src="" alt="" width="100%" height="auto"></p>
                 </div>
                 </div>
             </div>
