@@ -23,9 +23,9 @@ class NewsPostController extends Controller
     public function AddNewsPost(){
 
         $categories = Category::latest()->get();
-        $subcategories = SubCategory::latest()->get();
+        //$subcategories = SubCategory::latest()->get();
         $adminuser = User::where('role','admin')->latest()->get();
-        return view('backend.news.add_news_post',compact('categories','subcategories','adminuser'));
+        return view('backend.news.add_news_post',compact('categories'/*,'subcategories'*/,'adminuser'));
     }
 
     public function StoreNewsPost(Request $request){
@@ -37,7 +37,7 @@ class NewsPostController extends Controller
 
         NewsPost::insert([
             'category_id' => $request->category_id,
-            'subcategory_id' => $request->subcategory_id,
+            //'subcategory_id' => $request->subcategory_id,
             'user_id' => $request->user_id,
             'news_title' => $request->news_title,
             'news_title_slug' => strtolower(str_replace(' ','-',$request->news_title)),
@@ -66,7 +66,7 @@ class NewsPostController extends Controller
 
     public function EditNewsPost($id){
         $categories = Category::latest()->get();
-        $subcategories = SubCategory::latest()->get();
+        //$subcategories = SubCategory::latest()->get();
         $adminuser = User::where('role','admin')->latest()->get();
         $newspost = NewsPost::findOrFail($id);
         return view('backend.news.edit_news_post',compact('categories','subcategories','adminuser','newspost'));
@@ -82,7 +82,7 @@ class NewsPostController extends Controller
 
         NewsPost::findOrFail($newspost_id)->update([
             'category_id' => $request->category_id,
-            'subcategory_id' => $request->subcategory_id,
+            //'subcategory_id' => $request->subcategory_id,
             'user_id' => $request->user_id,
             'news_title' => $request->news_title,
             'news_title_slug' => strtolower(str_replace(' ','-',$request->news_title)),
@@ -110,7 +110,7 @@ class NewsPostController extends Controller
         }else{
             NewsPost::findOrFail($newspost_id)->update([
                 'category_id' => $request->category_id,
-                'subcategory_id' => $request->subcategory_id,
+                //'subcategory_id' => $request->subcategory_id,
                 'user_id' => $request->user_id,
                 'news_title' => $request->news_title,
                 'news_title_slug' => strtolower(str_replace(' ','-',$request->news_title)),
