@@ -69,7 +69,7 @@ class NewsPostController extends Controller
         //$subcategories = SubCategory::latest()->get();
         $adminuser = User::where('role','admin')->latest()->get();
         $newspost = NewsPost::findOrFail($id);
-        return view('backend.news.edit_news_post',compact('categories','subcategories','adminuser','newspost'));
+        return view('backend.news.edit_news_post',compact('categories',/*'subcategories,'*/'adminuser','newspost'));
     }
 
     public function UpdateNewsPost(Request $request){
