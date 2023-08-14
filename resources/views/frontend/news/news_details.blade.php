@@ -19,13 +19,6 @@
 					@if(isset($news['category']['category_name']))
 						<a href=" " rel="category tag">{{$news['category']['category_name']}}</a>
 					@endif
-
-                    <!-- >@if($news->subcategory_id == NULL)
-                        <a href=" " rel="category tag"> </a> 
-                    @else 
-                        <a href=" " rel="category tag">{{ $news['subcategory']['subcategory_name']}}</a> 
-                    @endif
-					< -->
                 </div>
             </div>
             
