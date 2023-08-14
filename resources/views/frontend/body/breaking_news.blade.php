@@ -1,6 +1,6 @@
 @php 
 
-$breaking_news = App\Models\NewsPost::where('status',1)->where('breaking_news',1)->orderBy('created_at','DESC')->limit(7)->get();
+$breaking_news = App\Models\NewsPost::where('status',1)->where('breaking_news',1)->orderBy('created_at', 'DESC')->limit(7)->get();
 
 @endphp
 <div class="top-scroll-section5">
