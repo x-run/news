@@ -12,7 +12,7 @@
 
             <div class="single-cat-info">
                 <div class="single-home">
-                    <i class="la la-home"> </i><a href=" "> HOME </a>
+                    <i class="la la-home"> </i><a href="{{ url('/')}}"> HOME </a>
                 </div>
                 <div class="single-cats">
                     <i class="la la-bars"></i>
