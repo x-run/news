@@ -99,7 +99,7 @@
             <li>
                 <a href="#sidebarCrm" data-bs-toggle="collapse">
                     <i class="mdi mdi-account-multiple-outline"></i>
-                    <span> CRM </span>
+                    <span> 設定中 </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarCrm">
@@ -126,7 +126,7 @@
             <li>
                 <a href="#sidebarEmail" data-bs-toggle="collapse">
                     <i class="mdi mdi-email-multiple-outline"></i>
-                    <span> Email </span>
+                    <span> 設定中 </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarEmail">
@@ -173,7 +173,7 @@
             <li>
                 <a href="#sidebarExpages" data-bs-toggle="collapse">
                     <i class="mdi mdi-text-box-multiple-outline"></i>
-                    <span> Extra Pages </span>
+                    <span> 設定中 </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarExpages">
@@ -193,7 +193,7 @@
             <li>
                 <a href="#sidebarIcons" data-bs-toggle="collapse">
                     <i class="mdi mdi-bullseye"></i>
-                    <span> Icons </span>
+                    <span> 設定中 </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarIcons">
@@ -211,7 +211,7 @@
             <li>
                 <a href="#sidebarForms" data-bs-toggle="collapse">
                     <i class="mdi mdi-bookmark-multiple-outline"></i>
-                    <span> Forms </span>
+                    <span> 設定中 </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarForms">
