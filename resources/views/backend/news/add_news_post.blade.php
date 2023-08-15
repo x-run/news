@@ -41,7 +41,7 @@
                             </div>
                         </div>
 
-                        <div class="row">
+                        <!-- ><div class="row">
                             <div class="form-group col-md-6 mb-3">
                                 <label for="inputEmail4" class="form-label">SubCategory Name</label>
                                 <select name="subcategory_id" class="form-select" id="example-select">
@@ -50,6 +50,7 @@
                                 </select>
                             </div>
                         </div>
+                        < -->
 
                         <div class="row">
                             <div class="form-group col-md-6 mb-3">
