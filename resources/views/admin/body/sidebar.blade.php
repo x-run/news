@@ -52,7 +52,7 @@
                 </div>
             </li>
 
-            <li>
+            <!-- ><li>
                 <a href="#sidebarEcommerce" data-bs-toggle="collapse">
                     <i class="mdi mdi-cart-outline"></i>
                     <span> SunCategory </span>
@@ -69,6 +69,7 @@
                     </ul>
                 </div>
             </li>
+            < -->
 @endif
 
 <li>
@@ -79,12 +80,18 @@
                 </a>
                 <div class="collapse" id="newspost">
                     <ul class="nav-second-level">
+@if($hideMenu)
+                        <li>
+                            <a href="{{ route('add.news.post')}}">Add News Post</a>
+                        </li>
+@else
                         <li>
                             <a href="{{ route('all.news.post')}}">All News Post</a>
                         </li>
                         <li>
                             <a href="{{ route('add.news.post')}}">Add News Post</a>
                         </li>
+@endif
                     </ul>
                 </div>
             </li>
