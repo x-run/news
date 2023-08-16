@@ -140,7 +140,11 @@
                                         {{ $item->category->category_name }}
                                     @endif
                                 </td>
-                                <td>{{ $item['user']['name']}}</td>
+                                <td>
+                                    @if(isset($item['user']) && is_array($item['user']))
+                                        {{ $item['user']['name'] }}
+                                    @endif
+                                </td>
                                 <td>{{ Carbon\Carbon::parse($item->post_date)->diffForHumans() }}</td>
                                 <td>
                                     @if($item->status == 1)
