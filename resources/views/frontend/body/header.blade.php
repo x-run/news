@@ -34,6 +34,27 @@ $cdate = new DateTime();
             </div>
         </div>
     </div>
+    <section class="logo-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="logo">
+                        <a href=" " title="NewsFlash">
+                            <img src="assets/images/logo.png" alt="NewsFlash" title="NewsFlash">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8">
+                    <div class="banner">
+                        <a href=" " target="_blank">
+                            
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </header>
 
 <div class="menu_section sticky" id="myHeader">
@@ -41,8 +62,8 @@ $cdate = new DateTime();
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="mobileLogo">
-                    <a href="{{url('/')}}" title="NewsFlash">
-                        <img src="{{ asset('frontend/assets/images/coca.png')}}" alt="Logo" title="Logo" style="width: 100px; height: 100px;">
+                    <a href=" " title="NewsFlash">
+                        <img src="" alt="Logo" title="Logo">
                     </a>
                 </div>
                 <div class="stellarnav dark desktop">

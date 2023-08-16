@@ -92,7 +92,7 @@ class Admincontroller extends Controller
             'password' => Hash::make($request->new_password)
         ]);
 
-        return back()->with('status',"password Change Successfully");
+        return back()->with('status',"Password Change Successfully");
     }
 
     public function AllAdmin(){

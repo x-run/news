@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
  
-<title>Easy News | Online New Portal </title>
+<title>WUN Media | World Uchinanchu Network </title>
  
 <link rel="shortcut icon" href="{{ asset('frontend/assets/images/favicon.gif')}}" type="image/x-icon">
  
