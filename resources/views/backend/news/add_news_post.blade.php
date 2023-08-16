@@ -246,7 +246,7 @@
             const textarea = document.querySelector('textarea[name="news_details"]');
 
             // textarea要素が空の場合
-            if (textarea.value.trim() === '') {
+            if (textarea.value.trim() !== '') {
                 // アラートを表示
                 alert('News Details is required.');
 

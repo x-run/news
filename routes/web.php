@@ -9,6 +9,7 @@ use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\NewsPostController;
+use App\Http\Controllers\Backend\BannerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -119,6 +120,14 @@ Route::controller(NewsPostController::class)->group(function(){
     Route::get('/inactive/news/post/{id}','InactiveNewsPost')->name('inactive.news.post');
     Route::get('/active/news/post/{id}','ActiveNewsPost')->name('active.news.post');
 });
+
+//Banner All Route
+Route::controller(BannerController::class)->group(function(){
+    Route::get('/all/banners','AllBanners')->name('all.banners');
+});
+
+
+
 }); //End Admin Middleware
 
 ///Access for All 
