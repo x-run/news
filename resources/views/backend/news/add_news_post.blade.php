@@ -214,51 +214,6 @@
 
 <!-- Check if tiny cloud is empty -->
 
-<script type="text/javascript">
-    $(document).ready(function (){
-        $('#myForm').validate({
-            rules: {
-                news_title: {
-                    required : true,
-                }, 
-            },
-            messages :{
-                news_title: {
-                    required : 'Please Enter News Title',
-                },
-            },
-            errorElement : 'span', 
-            errorPlacement: function (error,element) {
-                error.addClass('invalid-feedback');
-                element.closest('.form-group').append(error);
-            },
-            highlight : function(element, errorClass, validClass){
-                $(element).addClass('is-invalid');
-            },
-            unhighlight : function(element, errorClass, validClass){
-                $(element).removeClass('is-invalid');
-            },
-        });
-
-        // フォームの送信ボタンのクリックイベントにリスナーを追加
-        $('button[type="submit"]').on('click', function(event) {
-            // textarea要素を取得
-            const textarea = document.querySelector('textarea[name="news_details"]');
-
-            // textarea要素が空の場合
-            if (textarea.value.trim() !== '') {
-                // アラートを表示
-                alert('News Details is required.');
-
-                // フォームの送信を中断
-                event.preventDefault();
-            }
-        });
-
-    });
-    
-</script>
-
 
 
 
