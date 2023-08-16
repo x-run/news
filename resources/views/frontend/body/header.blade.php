@@ -39,7 +39,7 @@ $cdate = new DateTime();
             <div class="row">
                 <div class="col-lg-4 col-md-4">
                     <div class="logo">
-                        <a href=" " title="NewsFlash">
+                        <a href="{{url('/')}}" title="NewsFlash">
                             <img src="" alt="coca" title="coca" style="width:100; height:auto;">
                         </a>
                     </div>
@@ -62,7 +62,7 @@ $cdate = new DateTime();
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="mobileLogo">
-                    <a href="" title="NewsFlash">
+                    <a href="{{ url('/')}}" title="NewsFlash">
                         <img src="" alt="oogo" title="oogo">
                     </a>
                 </div>
