@@ -11,8 +11,8 @@ use Intervention\Image\Facades\Image;
 class BannerController extends Controller
 {
     public function AllBanners(){
-
         $banner = Banner::findOrFail(1);
-        return view('backend.banner.banner_update',compact('banner'));
-    } // End Method 
+        return view('backend.banner.banner_update');
+    }
+    //
 }

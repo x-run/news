@@ -102,11 +102,14 @@
                     <span> Banner Setting </span>
                     <span class="menu-arrow"></span>
                 </a>
-                <div class="collapse" id="newspost">
+                <div class="collapse" id="banner">
                     <ul class="nav-second-level">
+@if($hideMenu)
+@else
                         <li>
                             <a href="{{ route('all.banners')}}">All Banner</a>
                         </li>
+@endif
                     </ul>
                 </div>
             </li>

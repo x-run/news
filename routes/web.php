@@ -126,8 +126,6 @@ Route::controller(BannerController::class)->group(function(){
     Route::get('/all/banners','AllBanners')->name('all.banners');
 });
 
-
-
 }); //End Admin Middleware
 
 ///Access for All 
