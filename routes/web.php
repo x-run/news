@@ -124,6 +124,7 @@ Route::controller(NewsPostController::class)->group(function(){
 //Banner All Route
 Route::controller(BannerController::class)->group(function(){
     Route::get('/all/banners','AllBanners')->name('all.banners');
+    Route::post('/update/banners','UpdateBanners')->name('update.banners');
 });
 
 }); //End Admin Middleware
