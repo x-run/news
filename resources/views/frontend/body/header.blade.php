@@ -40,7 +40,7 @@ $cdate = new DateTime();
                 <div class="col-lg-4 col-md-4">
                     <div class="logo">
                         <a href="{{url('/')}}" title="NewsFlash">
-                            <img src="" alt="coca" title="coca" style="width:100; height:auto;">
+                            <img src="{{ asset('frontend/assets/images/coca.png')}}" alt="coca" title="coca" style="width:100; height:auto;">
                         </a>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ $cdate = new DateTime();
             <div class="col-lg-12 col-md-12">
                 <div class="mobileLogo">
                     <a href="{{ url('/')}}" title="NewsFlash">
-                        <img src="" alt="oogo" title="oogo">
+                        <img src="{{ asset('frontend/assets/images/coca.png')}}" alt="oogo" title="oogo" style="width: 20px;; height:auto;">
                     </a>
                 </div>
                 <div class="stellarnav dark desktop">
