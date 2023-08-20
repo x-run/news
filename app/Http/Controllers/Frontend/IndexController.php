@@ -9,6 +9,7 @@ use App\Models\Category;
 use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Session;
+use App;
 
 class IndexController extends Controller
 {
@@ -50,5 +51,12 @@ class IndexController extends Controller
         $newspopular = NewsPost::orderBy('view_count','DESC')->limit(8)->get();
 
         return view('frontend.news.category_news',compact('news','breadcat','newstwo','newnewspost','newspopular'));
+    }
+
+    public function Change(Request $request){
+        App::setLocale($request->lang);
+        session()->put('locale',$request->lang);
+
+        return redirect()->back();
     }
 }

@@ -2,16 +2,34 @@
 $cdate = new DateTime();
 @endphp
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <header class="themesbazar_header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-4">
-                <div class="date">
-                    <i class="lar la-calendar"></i>
-                    {{ $cdate->format('l d-m-Y')}}
+            <div class="col-lg-5 col-md-5">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="date">
+                            <i class="lar la-calendar"></i>
+                            {{ $cdate->format('l d-m-Y')}}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <select name="" id="" class="form-select changeLang">
+                            <option value="ja"{{ session()->get('locale') == 'ja' ? 'selected' : '' }}>日本語</option>
+                            <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
+                            <option value="pt" {{ session()->get('locale') == 'pt' ? 'selected' : '' }}>Portuguese</option>
+                            <option value="es" {{ session()->get('locale') == 'es' ? 'selected' : '' }}>Spanish</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4">
+
+
+
+            <div class="col-lg-3 col-md-3">
                 <form class="header-search" action=" " method="post">
                     <input type="text" value="" name="s" placeholder=" Search Here " required="">
                     <button type="submit" value="Search"> <i class="las la-search"></i> </button>
@@ -59,7 +77,7 @@ $cdate = new DateTime();
                         @foreach($categories as $category)
                         <li id="menu-item-291" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-291 has-sub">
                             <a href="{{ url('news/category/'.$category->id.'/'.$category->category_slug) }}">
-                                {{ $category->category_name }}
+                                {{ GoogleTranslate::trans($category->category_name, app()->getLocale()) }}
                             </a>
                         </li>
                         @endforeach
@@ -73,3 +91,11 @@ $cdate = new DateTime();
         </div>
     </div>
 </div>
+
+
+<script type="text/javascript">
+    var url = "{{ route('changeLang') }}";
+    $(".changeLang").change(function(){
+        window.location.href = url + "?lang=" + $(this).val();
+    });
+</script>

@@ -557,11 +557,11 @@ SPORTS </div>
 <div class="container">
 <div class="row">
 <div class="col-lg-6 col-md-6">
-<div class="themesBazar_widget"> <div class="textwidget"><p><img loading="lazy" class="aligncenter size-full wp-image-74" src="{{ asset('frontend/')}}assets/images/biggapon-1.gif" alt="" width="100%" height="auto"></p>
+<div class="themesBazar_widget"> <div class="textwidget"><p><img loading="lazy" class="aligncenter size-full wp-image-74" src="{{ asset($banner->home_three)}}" alt="" width="100%" height="auto"></p>
 </div>
 </div> </div>
 <div class="col-lg-6 col-md-6">
-<div class="themesBazar_widget"> <div class="textwidget"><p><img loading="lazy" class="aligncenter size-full wp-image-74" src="{{ asset('frontend/')}}assets/images/biggapon-1.gif" alt="" width="100%" height="auto"></p>
+<div class="themesBazar_widget"> <div class="textwidget"><p><img loading="lazy" class="aligncenter size-full wp-image-74" src="{{ asset($banner->home_four)}}" alt="" width="100%" height="auto"></p>
 </div>
 </div> </div>
 </div>
