@@ -34,38 +34,13 @@ $cdate = new DateTime();
             </div>
         </div>
     </div>
-    <section class="logo-banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4">
-                    <div class="logo">
-                        <a href="{{url('/')}}" title="NewsFlash">
-                            <img src="{{ asset('frontend/assets/images/coca.png')}}" alt="coca" title="coca" style="width:100; height:auto;">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-8">
-                    <div class="banner">
-                        <a href=" " target="_blank">
-                            
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+  
 </header>
 
 <div class="menu_section sticky" id="myHeader">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12">
-                <div class="mobileLogo">
-                    <a href="{{ url('/')}}" title="NewsFlash">
-                        <img src="{{ asset('frontend/assets/images/coca.png')}}" alt="oogo" title="oogo" style="width: 20px;; height:auto;">
-                    </a>
-                </div>
                 <div class="stellarnav dark desktop">
                     <a href="" class="menu-toggle full">
                         <span class="bars"><span></span><span></span><span></span></span>
