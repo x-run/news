@@ -10,7 +10,7 @@
 <link rel="shortcut icon" href="{{ asset('frontend/assets/images/favicon.gif')}}" type="image/x-icon">
  
   
-<meta name="keywords" content="online newspaper, bangla news, news, bangla, newsportal">
+<meta name="keywords" content="wun wunmedia media 沖縄 ウチナーンチュ 沖縄 online newspaper, bangla news, news, bangla, newsportal">
 <meta name="description" content="Popular News Paper of Bangladesh">
 
  <link rel="stylesheet" href="{{ asset('frontend/assets/css/line-awesome.min.css')}}" />
