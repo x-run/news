@@ -34,7 +34,9 @@
                 </div>
                 <div class="col-lg-11 col-md-10">
                     <div class="reportar-title">
-                        Posted by {{ $news['user']['name']}}
+                        @if(isset($news['user']['name']))
+                            Posted by {{ $news['user']['name']}}
+                        @endif
                     </div>
                     <div class="viwe-count">
                         <ul>
