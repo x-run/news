@@ -16,6 +16,7 @@ $cdate = new DateTime();
                             {{ $cdate->format('l d-m-Y')}}
                         </div>
                     </div>
+                    {{--
                     <div class="col-md-6">
                         <select name="" id="" class="form-select changeLang" onchange="changeLanguage(this.value)">
                             <option value="ja" {{ session()->get('locale') == 'ja' ? 'selected' : '' }}>日本語</option>
@@ -24,6 +25,7 @@ $cdate = new DateTime();
                             <option value="es" {{ session()->get('locale') == 'es' ? 'selected' : '' }}>Spanish</option>
                         </select>
                     </div>
+                    --}}
                 </div>
             </div>
 
@@ -92,10 +94,11 @@ $cdate = new DateTime();
     </div>
 </div>
 
-
+{{--
 <script>
     function changeLanguage(lang) {
         var url = "{{ route('changeLang') }}";
         window.location.href = url + "?lang=" + lang;
     }
-</script>
+</script> 
+ --}}
