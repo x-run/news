@@ -55,13 +55,16 @@ class IndexController extends Controller
 
     public function Change(Request $request){
         $selectedLang = $request->lang;
-
-        if($selectedLang === 'ja' || $selectedLang === 'en' || $selectedLang === 'es' || $selectedLang === 'pt'){
+    
+        if ($selectedLang === 'es' || $selectedLang === 'en' || $selectedLang === 'ja' || $selectedLang === 'pt') {
             App::setLocale($selectedLang);
+            session()->put('locale', $selectedLang);
         } else {
+            // デフォルトの言語を設定
             App::setLocale('ja');
-            session()->put('locale','ja');
+            session()->put('locale', 'ja');
         }
+    
         return redirect()->back();
     }
 }
