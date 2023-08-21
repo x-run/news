@@ -10,7 +10,7 @@
 <link rel="shortcut icon" href="{{ asset('frontend/assets/images/favicon.gif')}}" type="image/x-icon">
  
   
-<meta name="keywords" content="wun wunmedia media 沖縄 ウチナーンチュ 沖縄 online newspaper, bangla news, news, bangla, newsportal">
+<meta name="keywords" content="wun, wunmedia, media, 沖縄, ウチナーンチュ, 沖縄, online newspaper, news, news, bangla, newsportal">
 <meta name="description" content="今日も沖縄は元気です">
 
  <link rel="stylesheet" href="{{ asset('frontend/assets/css/line-awesome.min.css')}}" />
