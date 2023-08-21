@@ -11,7 +11,7 @@
  
   
 <meta name="keywords" content="wun, wunmedia, media, 沖縄, ウチナーンチュ, 沖縄, online newspaper, news, news, bangla, newsportal">
-<meta name="description" content="今日も沖縄は元気です">
+<meta name="description" content="沖縄">
 
  <link rel="stylesheet" href="{{ asset('frontend/assets/css/line-awesome.min.css')}}" />
  <link rel="stylesheet" href="{{ asset('frontend/assets/css/headstyle.css')}}" />
