@@ -18,7 +18,6 @@ $cdate = new DateTime();
                     </div>
                     <div class="col-md-6">
                         <select name="" id="" class="form-select changeLang">
-                            <option disabled selected value="ja" {{ session()->get('locale') == 'ja' ? 'selected' : '' }}>Select Language</option>
                             <option value="ja" {{ session()->get('locale') == 'ja' ? 'selected' : '' }}>日本語</option>
                             <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
                             <option value="pt" {{ session()->get('locale') == 'pt' ? 'selected' : '' }}>Portuguese</option>
