@@ -14,7 +14,7 @@
  
   
 <meta name="keywords" content="wun, wunmedia, media, 沖縄, ウチナーンチュ, 沖縄, online newspaper, news, news, bangla, newsportal">
-<meta name="description" content="Okiawa Viral Media">
+<meta name="description" content="沖縄の最新ニュースや文化、観光情報をお届けするオンラインメディア。地域の出来事からスポーツまで幅広いトピックを網羅したニュースサイトです。">
 
  <link rel="stylesheet" href="{{ asset('frontend/assets/css/line-awesome.min.css')}}" />
  <link rel="stylesheet" href="{{ asset('frontend/assets/css/headstyle.css')}}" />
