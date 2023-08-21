@@ -17,7 +17,7 @@ $cdate = new DateTime();
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <select name="" id="" class="form-select changeLang">
+                        <select name="" id="" class="form-select changeLang" onchange="changeLanguage(this.value)">
                             <option value="ja" {{ session()->get('locale') == 'ja' ? 'selected' : '' }}>日本語</option>
                             <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
                             <option value="pt" {{ session()->get('locale') == 'pt' ? 'selected' : '' }}>Portuguese</option>
@@ -93,9 +93,9 @@ $cdate = new DateTime();
 </div>
 
 
-<script type="text/javascript">
-    var url = "{{ route('changeLang') }}";
-    $(".changeLang").change(function(){
-        window.location.href = url + "?lang=" + $(this).val();
-    });
+<script>
+    function changeLanguage(lang) {
+        var url = "{{ route('changeLang') }}";
+        window.location.href = url + "?lang=" + lang;
+    }
 </script>
