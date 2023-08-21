@@ -14,7 +14,7 @@
  
   
 <meta name="keywords" content="wun, wunmedia, media, 沖縄, ウチナーンチュ, 沖縄, online newspaper, news, news, bangla, newsportal">
-<meta name="description" content="沖縄の息づく風土と魅力を伝えるオンラインニュースサイト。文化・観光・スポーツ・地域の出来事など、幅広いトピックを網羅。沖縄の心温まる物語から、最新のニュースまで、情報満載の窓口です。">
+<meta name="description" content="沖縄の最新ニュースや文化、観光情報をお届けするオンラインメディア。地域の出来事からスポーツまで幅広いトピックを網羅したニュースサイトです">
 
  <link rel="stylesheet" href="{{ asset('frontend/assets/css/line-awesome.min.css')}}" />
  <link rel="stylesheet" href="{{ asset('frontend/assets/css/headstyle.css')}}" />
