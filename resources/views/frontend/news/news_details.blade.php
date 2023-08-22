@@ -43,7 +43,7 @@
                     <div class="viwe-count">
                         <ul>
                             <li><i class="la la-clock-o"></i> Updated {{ $news->created_at->format('1 M d Y')}}</li>
-                            <li> / <i class="la la-eye"></i>{{ $news->view_count}} 人が読みました' </li>
+                            <li> / <i class="la la-eye"></i>{{ $news->view_count}} 人が読みました </li>
                         </ul>
                     </div>
                 </div>

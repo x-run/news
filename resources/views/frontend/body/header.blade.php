@@ -7,31 +7,28 @@ $cdate = new DateTime();
 <header class="themesbazar_header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-5 col-md-5">
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="date">
-                            <i class="lar la-calendar"></i>
-                            {{ $cdate->format('l d-m-Y')}}
-                        </div>
-                    </div>
-                    {{--
-                    <div class="col-md-6">
-                        <select name="" id="" class="form-select changeLang" onchange="changeLanguage(this.value)">
-                            <option value="ja" {{ session()->get('locale') == 'ja' ? 'selected' : '' }}>日本語</option>
-                            <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
-                            <option value="pt" {{ session()->get('locale') == 'pt' ? 'selected' : '' }}>Portuguese</option>
-                            <option value="es" {{ session()->get('locale') == 'es' ? 'selected' : '' }}>Spanish</option>
-                        </select>
-                    </div>
-                    --}}
+            <div class="col-lg-4 col-md-4">
+                <div class="date">
+                    <i class="lar la-calendar"></i>
+                    {{ $cdate->format('l d-m-Y')}}
                 </div>
             </div>
+            {{--
+            <div class="col-md-6">
+                <select name="" id="" class="form-select changeLang" onchange="changeLanguage(this.value)">
+                    <option value="ja" {{ session()->get('locale') == 'ja' ? 'selected' : '' }}>日本語</option>
+                    <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
+                    <option value="pt" {{ session()->get('locale') == 'pt' ? 'selected' : '' }}>Portuguese</option>
+                    <option value="es" {{ session()->get('locale') == 'es' ? 'selected' : '' }}>Spanish</option>
+                </select>
+            </div>
+            --}}
+        </div>
+    </div>
 
 
 
-            <div class="col-lg-3 col-md-3">
+            <div class="col-lg-4 col-md-4">
                 <form class="header-search" action=" " method="post">
                     <input type="text" value="" name="s" placeholder=" Search Here " required="">
                     <button type="submit" value="Search"> <i class="las la-search"></i> </button>
