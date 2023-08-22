@@ -79,7 +79,7 @@ $cdate = new DateTime();
                         @foreach($categories as $category)
                         <li id="menu-item-291" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-291 has-sub">
                             <a href="{{ url('news/category/'.$category->id.'/'.$category->category_slug) }}">
-                                {{ GoogleTranslate::trans($category->category_name, app()->getLocale()) }}
+                                {{$category->category_name}}
                             </a>
                         </li>
                         @endforeach

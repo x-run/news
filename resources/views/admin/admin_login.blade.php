@@ -36,7 +36,7 @@
                                     <div class="auth-logo">
                                         <a href="index.html" class="logo logo-dark text-center">
                                             <span class="logo-lg">
-                                                <img src="{{ asset('backend/assets/images/logo-dark.png')}}" alt="" height="22">
+                                                <img src="" alt="" height="22">
                                             </span>
                                         </a>
                     
