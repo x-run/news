@@ -40,11 +40,13 @@ $cdate = new DateTime();
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12">
+                {{--
                 <div class="mobileLogo">
                     <a href=" " title="NewsFlash">
-                        <img src="{{ asset('frontend/')}}assets/images/footer_logo.gif" alt="Logo" title="Logo">
+                        <img src="" alt="Logo" title="Logo" >
                     </a>
                 </div>
+                --}}
                 <div class="stellarnav dark desktop">
                     <a href="" class="menu-toggle full">
                         <span class="bars"><span></span><span></span><span></span></span>
