@@ -2,8 +2,6 @@
 $cdate = new DateTime();
 @endphp
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 <header class="themesbazar_header">
     <div class="container">
         <div class="row">
@@ -13,21 +11,6 @@ $cdate = new DateTime();
                     {{ $cdate->format('l d-m-Y')}}
                 </div>
             </div>
-            {{--
-            <div class="col-md-6">
-                <select name="" id="" class="form-select changeLang" onchange="changeLanguage(this.value)">
-                    <option value="ja" {{ session()->get('locale') == 'ja' ? 'selected' : '' }}>日本語</option>
-                    <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
-                    <option value="pt" {{ session()->get('locale') == 'pt' ? 'selected' : '' }}>Portuguese</option>
-                    <option value="es" {{ session()->get('locale') == 'es' ? 'selected' : '' }}>Spanish</option>
-                </select>
-            </div>
-            --}}
-        </div>
-    </div>
-
-
-
             <div class="col-lg-4 col-md-4">
                 <form class="header-search" action=" " method="post">
                     <input type="text" value="" name="s" placeholder=" Search Here " required="">
@@ -51,13 +34,17 @@ $cdate = new DateTime();
             </div>
         </div>
     </div>
-  
 </header>
 
 <div class="menu_section sticky" id="myHeader">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12">
+                <div class="mobileLogo">
+                    <a href=" " title="NewsFlash">
+                        <img src="{{ asset('frontend/')}}assets/images/footer_logo.gif" alt="Logo" title="Logo">
+                    </a>
+                </div>
                 <div class="stellarnav dark desktop">
                     <a href="" class="menu-toggle full">
                         <span class="bars"><span></span><span></span><span></span></span>
@@ -76,8 +63,19 @@ $cdate = new DateTime();
                         @foreach($categories as $category)
                         <li id="menu-item-291" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-291 has-sub">
                             <a href="{{ url('news/category/'.$category->id.'/'.$category->category_slug) }}">
-                                {{$category->category_name}}
+                                {{ $category->category_name }}
                             </a>
+                            @php
+                            $subcategories = App\Models\Subcategory::where('category_id',$category->id)->orderBy('subcategory_name','ASC')->get();
+                            @endphp
+                            <ul class="sub-menu">
+                                @foreach($subcategories as $subcategory)
+                                <li id="menu-item-294" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-294">
+                                    <a href="">{{ $subcategory->subcategory_name }}</a>
+                                </li>
+                                @endforeach
+                            </ul>
+                            <a class="dd-toggle" href=" "><span class="icon-plus"></span></a>
                         </li>
                         @endforeach
 
@@ -90,12 +88,3 @@ $cdate = new DateTime();
         </div>
     </div>
 </div>
-
-{{--
-<script>
-    function changeLanguage(lang) {
-        var url = "{{ route('changeLang') }}";
-        window.location.href = url + "?lang=" + lang;
-    }
-</script> 
- --}}

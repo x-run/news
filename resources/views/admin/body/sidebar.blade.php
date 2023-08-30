@@ -118,22 +118,13 @@
             <li>
                 <a href="#sidebarEmail" data-bs-toggle="collapse">
                     <i class="mdi mdi-email-multiple-outline"></i>
-                    <span> 設定中 </span>
+                    <span> Photo Setting </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarEmail">
                     <ul class="nav-second-level">
                         <li>
-                            <a href="email-inbox.html">Inbox</a>
-                        </li>
-                        <li>
-                            <a href="email-read.html">Read Email</a>
-                        </li>
-                        <li>
-                            <a href="email-compose.html">Compose Email</a>
-                        </li>
-                        <li>
-                            <a href="email-templates.html">Email Templates</a>
+                            <a href="{{ route('all.photo.gallery')}}">Photo Gallery</a>
                         </li>
                     </ul>
                 </div>

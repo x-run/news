@@ -10,6 +10,7 @@ use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\NewsPostController;
 use App\Http\Controllers\Backend\BannerController;
+use App\Http\Controllers\Backend\PhotoGalleryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -127,11 +128,19 @@ Route::controller(BannerController::class)->group(function(){
     Route::post('/update/banners','UpdateBanners')->name('update.banners');
 });
 
+Route::controller(PhotoGalleryController::class)->group(function(){
+    Route::get('/all/photo/gallery','AllPhotoGallery')->name('all.photo.gallery');
+    Route::get('/add/photo/gallery','AddPhotoGallery')->name('add.photo.gallery');
+    Route::post('/store/photo/gallery','StorePhotoGallery')->name('store.photo.gallery');
+    Route::get('/edit/photo/gallery/{id}','EditPhotoGallery')->name('edit.photo.gallery');
+    Route::post('/update/photo/gallery/{id}','UpdatePhotoGallery')->name('update.photo.gallery');
+});
+
 }); //End Admin Middleware
 
 ///Access for All 
 Route::get('/news/details/{id}/{slug}',[IndexController::class,'NewsDetails']);
 Route::get('/news/category/{id}/{slug}',[IndexController::class,'CatWiseNews']);
 //Route::get('/lang/change',[IndexController::class,'Change'])->name('changeLang');
-
+Route::post('/search',[IndexController::class,'SearchByDate'])->name('search-by-date');
 ///End Access for All
