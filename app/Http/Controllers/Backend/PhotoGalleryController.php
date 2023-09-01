@@ -17,7 +17,7 @@ class PhotoGalleryController extends Controller
     
     public function AddPhotoGallery(){
         return view('backend.photo.add_photo');
-    }
+    }//End Method
 
     public function StorePhotoGallery(Request $request){
         $image = $request->file('multi_image');
@@ -40,7 +40,7 @@ class PhotoGalleryController extends Controller
         );
 
         return redirect()->route('all.photo.gallery')->with($notification);
-    }
+    }// End Method
 
     public function EditPhotoGallery($id){
 
@@ -70,7 +70,23 @@ class PhotoGalleryController extends Controller
             );
 
             return redirect()->route('all.photo.gallery')->with($notification);
-    
         }
-    }
+    }// End Method
+
+    public function DelatePhotoGallery($id){
+
+        $photo = PhotoGallery::findOrFail($id);
+        $img = $photo->photo_gallery;
+        unlink($img);
+
+        PhotoGallery::FindOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Photo Gallery Delated Successfully',
+            'alert-type' => 'success'
+
+        );
+
+        return redirect()->back()->with($notification);
+    }//End Method
 }

@@ -133,7 +133,8 @@ Route::controller(PhotoGalleryController::class)->group(function(){
     Route::get('/add/photo/gallery','AddPhotoGallery')->name('add.photo.gallery');
     Route::post('/store/photo/gallery','StorePhotoGallery')->name('store.photo.gallery');
     Route::get('/edit/photo/gallery/{id}','EditPhotoGallery')->name('edit.photo.gallery');
-    Route::post('/update/photo/gallery/{id}','UpdatePhotoGallery')->name('update.photo.gallery');
+    Route::post('/update/photo/gallery/','UpdatePhotoGallery')->name('update.photo.gallery');
+    Route::get('/delate/photo/gallery/{id}','DelatePhotoGallery')->name('delete.photo.gallery');
 });
 
 }); //End Admin Middleware
