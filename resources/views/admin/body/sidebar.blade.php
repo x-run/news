@@ -151,6 +151,21 @@
                 </div>
             </li>
 
+            <li>
+                <a href="#video" data-bs-toggle="collapse">
+                    <i class="mdi mdi-email-multiple-outline"></i>
+                    <span> Live TV Setting </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="video">
+                    <ul class="nav-second-level">
+                        <li>
+                            <a href="{{ route('update.live.tv')}}">Update Live TV</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
 @if($hideMenu)
 @else
             <li class="menu-title mt-2">Setting</li>

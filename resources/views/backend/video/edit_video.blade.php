@@ -49,7 +49,7 @@
                         <div class="row">
                             <div class="form-group col-md-6 mb-3">
                                 <label for="inputEmail4" class="form-label">video Image</label>
-                                <input type="file" name="video_image" class="form-control" id="image" value="{{ asset($video->video_image)}}>
+                                <input type="file" name="video_image" class="form-control" id="image" value="{{ asset($video->video_image)}}">
                             </div>
                         </div>
 

@@ -96,6 +96,11 @@ $section_nine = App\Models\NewsPost::where('status',1)->where('first_section_nin
 </div>
 </div>
 </div>
+
+@php 
+$live = App\Models\LiveTv::find(1);
+@endphp
+
 <div class="col-lg-3 col-md-4">
 <div class="live-item">
 <div class="live_title">
@@ -104,14 +109,14 @@ $section_nine = App\Models\NewsPost::where('status',1)->where('first_section_nin
 </div>
 <div class="popup-wrpp">
 <div class="live_image">
-<img width="700" height="400" src="{{ asset('frontend/')}}assets/images/lazy.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy">
+<iframe class="" src="{{ $live->live_url}}"  allowfullscreen="allowfullscreen" width="100%" height="400px"></iframe>
 <div data-mfp-src="#mymodal" class="live-icon modal-live"> <i class="las la-play"></i> </div>
 </div>
 <div class="live-popup"> 
 <div id="mymodal" class="mfp-hide" role="dialog" aria-labelledby="modal-titles" aria-describedby="modal-contents">
 <div id="modal-contents">
 <div class="embed-responsive embed-responsive-16by9 embed-responsive-item">
-<iframe class="" src=" "  allowfullscreen="allowfullscreen" width="100%" height="400px"></iframe>
+<iframe class="" src="{{ $live->live_url}}"  allowfullscreen="allowfullscreen" width="100%" height="400px"></iframe>
 </div>
 </div>
 </div>

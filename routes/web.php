@@ -147,6 +147,9 @@ Route::controller(VideoGalleryController::class)->group(function(){
     Route::get('/edit/video/gallery/{id}','EditVideoGallery')->name('edit.video.gallery');
     Route::post('/update/video/gallery','UpdateVideoGallery')->name('update.video.gallery');
     Route::get('/delete/video/gallery/{id}','DeleteVideoGallery')->name('delete.video.gallery');
+    //Live TV Route
+    Route::get('/update/live/tv','UpdateLiveTv')->name('update.live.tv');
+    Route::post('/update/live','UpdateLive')->name('update.live');
 });
 
 }); //End Admin Middleware

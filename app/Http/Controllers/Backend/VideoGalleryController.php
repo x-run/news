@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\VideoGallery;
 use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
+use App\Models\LiveTv;
 
 class VideoGalleryController extends Controller
 {
@@ -100,5 +101,23 @@ class VideoGalleryController extends Controller
 
         return redirect()->back()->with($notification);
     }//End Method
+///////////////////////////////Live TV Setting ??????
+    public function UpdateLiveTv(){
+        $live = LiveTv::findOrFail(1);
+        return view('backend.video.live_tv',compact('live'));
+    }//End Method
+    
+    public function UpdateLive(Request $request){
+        $live_id = $request->id;
+        LiveTv::findOrFail($live_id)->update([
+            'live_url' => $request->live_url,
+            'post_date' => Carbon::now()->format('d F Y'),
+        ]);
+        $notification = array(
+            'message' => 'Live Update Successfully',
+            'alert-type' => 'success'
 
+        );
+        return redirect()->back()->with($notification);
+    }
 }
