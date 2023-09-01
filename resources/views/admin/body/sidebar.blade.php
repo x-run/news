@@ -124,7 +124,28 @@
                 <div class="collapse" id="sidebarEmail">
                     <ul class="nav-second-level">
                         <li>
-                            <a href="{{ route('all.photo.gallery')}}">Photo Gallery</a>
+                            <a href="{{ route('all.photo.gallery')}}">All Photo Gallery</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('add.photo.gallery')}}">Add Photo Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li>
+                <a href="#video" data-bs-toggle="collapse">
+                    <i class="mdi mdi-email-multiple-outline"></i>
+                    <span> Video Setting </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarEmail">
+                    <ul class="nav-second-level">
+                        <li>
+                            <a href="{{ route('all.video.gallery')}}">All Video Gallery</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('add.video.gallery')}}">Add Video Gallery</a>
                         </li>
                     </ul>
                 </div>

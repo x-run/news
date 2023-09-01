@@ -1355,51 +1355,23 @@ $photo_gallery = App\Models\PhotoGallery::latest()->get();
 <h2 class="themesBazar_cat01"> <a href=" "> <i class="las la-video"></i> VIDEO GALLERY </a></h2>
 
 <div class="white-bg">
+
+@php
+$video_gallery = App\Models\VideoGallery::latest()->get();
+@endphp
+
+@foreach($video_gallery as $video)
 <div class="secFive-smallItem">
 <div class="secFive-smallImg">
-<img src="{{ asset('frontend/')}}assets/images/lazy.jpg">
-<a href="https://www.youtube.com/watch?v=z3ZM1TUNoUY" class="home-video-icon popup"><i class="las la-video"></i></a>
+<iframe src="{{$video->video_url}}" frameborder="0" allowfullscreen></iframe>
+<a href="{{ $video->video_url}}" class="home-video-icon popup"><i class="las la-video"></i></a>
 <h5 class="secFive_title2">
-<a href="https://www.youtube.com/watch?v=z3ZM1TUNoUY" class="popup"> Pakistan set up Asia Cup final </a>
+<a href="{{$video->video_url}}" class="popup">{{ $video->video_title}}</a>
 </h5>
 </div>
 </div>
-<div class="secFive-smallItem">
-<div class="secFive-smallImg">
-<img src="{{ asset('frontend/')}}assets/images/lazy.jpg">
-<a href="https://www.youtube.com/watch?v=XTUg53YVaqQ" class="home-video-icon popup"><i class="las la-video"></i></a>
-<h5 class="secFive_title2">
-<a href="https://www.youtube.com/watch?v=XTUg53YVaqQ" class="popup">  Pakistan set up Asia Cup final</a>
-</h5>
-</div>
-</div>
-<div class="secFive-smallItem">
-<div class="secFive-smallImg">
-<img src="{{ asset('frontend/')}}assets/images/lazy.jpg">
-<a href="https://www.youtube.com/watch?v=qr3CeJJ_mkM" class="home-video-icon popup"><i class="las la-video"></i></a>
-<h5 class="secFive_title2">
-<a href="https://www.youtube.com/watch?v=qr3CeJJ_mkM" class="popup">  Pakistan set up Asia Cup final </a>
-</h5>
-</div>
-</div>
-<div class="secFive-smallItem">
-<div class="secFive-smallImg">
-<img src="{{ asset('frontend/')}}assets/images/lazy.jpg">
-<a href="https://www.youtube.com/watch?v=BU12aHPjoNo" class="home-video-icon popup"><i class="las la-video"></i></a>
-<h5 class="secFive_title2">
-<a href="https://www.youtube.com/watch?v=BU12aHPjoNo" class="popup"> Pakistan set up Asia Cup final </a>
-</h5>
-</div>
-</div>
-<div class="secFive-smallItem">
-<div class="secFive-smallImg">
-<img src="{{ asset('frontend/')}}assets/images/lazy.jpg">
-<a href="https://www.youtube.com/watch?v=TH0kuBADgSI" class="home-video-icon popup"><i class="las la-video"></i></a>
-<h5 class="secFive_title2">
-<a href="https://www.youtube.com/watch?v=TH0kuBADgSI" class="popup">  Pakistan set up Asia Cup final </a>
-</h5>
-</div>
-</div>
+@endforeach
+
 </div>
 </div>
 </div>
