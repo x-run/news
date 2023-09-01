@@ -139,7 +139,7 @@
                     <span> Video Setting </span>
                     <span class="menu-arrow"></span>
                 </a>
-                <div class="collapse" id="sidebarEmail">
+                <div class="collapse" id="video">
                     <ul class="nav-second-level">
                         <li>
                             <a href="{{ route('all.video.gallery')}}">All Video Gallery</a>
