@@ -1352,7 +1352,7 @@ $photo_gallery = App\Models\PhotoGallery::latest()->get();
 </div>
 <div class="col-lg-4 col-md-4">
 
-<h2 class="themesBazar_cat01"> <a href=" "> <i class="las la-video"></i> VIDEO GALLERY </a></h2>
+<h2 class="themesBazar_cat01"> <a href=" "> <i class="las la-video"></i> MUSIC Video </a></h2>
 
 <div class="white-bg">
 
