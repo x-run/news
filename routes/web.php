@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 
 use App\Http\Controllers\Frontend\IndexController;
+use App\Http\Controllers\Frontend\ReviewController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\NewsPostController;
 use App\Http\Controllers\Backend\BannerController;
@@ -152,6 +153,14 @@ Route::controller(VideoGalleryController::class)->group(function(){
     Route::post('/update/live','UpdateLive')->name('update.live');
 });
 
+//Review All Route
+Route::controller(ReviewController::class)->group(function(){
+    Route::get('/pending/review','PendingReview')->name('pending.review');
+    Route::get('/review/approve/{id}','ReviewApprove')->name('review.approve');
+    Route::get('/approve/review','ApproveReview')->name('approve.review');
+    Route::get('/delete/review/{id}','DeleteReview')->name('delete.review');
+});
+
 }); //End Admin Middleware
 
 ///Access for All 
@@ -159,4 +168,5 @@ Route::get('/news/details/{id}/{slug}',[IndexController::class,'NewsDetails']);
 Route::get('/news/category/{id}/{slug}',[IndexController::class,'CatWiseNews']);
 //Route::get('/lang/change',[IndexController::class,'Change'])->name('changeLang');
 Route::post('/search',[IndexController::class,'SearchByDate'])->name('search-by-date');
+Route::post('/store/review',[ReviewController::class,'StoreReview'])->name('store.review');
 ///End Access for All

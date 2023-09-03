@@ -89,39 +89,57 @@
                     </script> </a>
             </div>
 
+            @php
+            $review = App\Models\Review::where('news_id',$news->id)->inRandomOrder()->limit(5)->get();
+            @endphp
+
+            @foreach($review as $item)
+
+            @if($item->status == 0)
+            @else
             <div class="author2">
                 <div class="author-content2">
                     <h6 class="author-caption2">
                         <span> COMMENTS </span>
                     </h6>
                     <div class="author-image2">
-                        <img alt="" src="assets/images/lazy.jpg"   class="avatar avatar-96 photo" height="96" width="96" loading="lazy"> 
+                        <img alt="" src="{{ (!empty($item->user->photo)) ? url('upload/user_images/' . $item->user->photo): url('upload/no_image.jpg') }}"   class="avatar avatar-96 photo" height="96" width="96" loading="lazy"> 
                     </div>
                     <div class="authorContent">
                         <h1 class="author-name2">
-                            <a href=" "> Jack MA </a>
+                            <a href=" ">{{ $item->user->name}}</a>
                         </h1>
-                        <div class="author-details">It will take the Queen's coffin on a final journey through London and on to Windsor Castle for a second service</div>
+                        <p>{{Carbon\Carbon::parse($item->created_at)->diffForHumans()}}</p>
+                        <div class="author-details">{{ $item->comment}}</div>
                     </div>
                 </div>
             </div>
+            @endif
+            @endforeach
+
 
             <hr>
 
-            <form action=" " method="post" class="wpcf7-form init" enctype="multipart/form-data" novalidate="novalidate" data-status="init">
+            @guest
+            <p><b> ログイン後にコメントを書き込む事ができます <a href="{{ route('login')}}">Login Page</a></b></p>
+            
+            @else
+            <form action="{{ route('store.review')}}" method="post" class="wpcf7-form init" enctype="multipart/form-data" novalidate="novalidate" data-status="init">
+                @csrf
+
+                @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status')}}
+                </div>
+                @elseif(session('error'))
+                <div class="alert alert-danger" role="alert">
+                    {{ session('error')}}
+                </div>
+                @endif 
+                <input type="hidden" name="news_id" value="{{$news->id}}">
                 <div style="display: none;">
                 </div>
                 <div class="main_section">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12">
-                            <div class="contact-title ">
-                                Subject *
-                            </div>
-                            <div class="contact-form">
-                                <span class="wpcf7-form-control-wrap sub_title"><input type="text" name="sub_title" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="News Sub Title"></span>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="row">
                         <div class="col-lg-12">
@@ -129,7 +147,9 @@
                                 Comments *
                             </div>
                             <div class="contact-form">
-                                <span class="wpcf7-form-control-wrap news_details"><textarea name="news_details" cols="20" rows="5" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="News Details...."></textarea></span>
+                                <span class="wpcf7-form-control-wrap news_details">
+                                    <textarea name="comment" cols="20" rows="5" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="News Details...."></textarea>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -144,6 +164,7 @@
                 </div>
 				<div class="wpcf7-response-output" aria-hidden="true"></div>
             </form>
+            @endguest
 
             <div class="single_relatedCat">
                 <a href=" ">Related News </a>
