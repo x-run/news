@@ -18,7 +18,7 @@ class IndexController extends Controller
         $newnewspost = NewsPost::orderBy('id','DESC')->limit(8)->get();
         $newspopular = NewsPost::orderBy('view_count','DESC')->limit(8)->get();
         return view('frontend.index',compact('newnewspost','newspopular'));
-    }
+    }//End Method
 
     public function NewsDetails($id,$slug){
         $news = NewsPost::findOrFail($id);
@@ -38,7 +38,7 @@ class IndexController extends Controller
         $newspopular = NewsPost::orderBy('view_count','DESC')->limit(8)->get();
 
         return view('frontend.news.news_details',compact('news','tags_all','relatedNews','newnewspost','newspopular'));
-    }
+    }//End Method
 
     public function CatWiseNews($id,$slug){
 
@@ -52,7 +52,7 @@ class IndexController extends Controller
         $newspopular = NewsPost::orderBy('view_count','DESC')->limit(8)->get();
 
         return view('frontend.news.category_news',compact('news','breadcat','newstwo','newnewspost','newspopular'));
-    }
+    }//End Method
 
     public function Change(Request $request){
         $selectedLang = $request->lang;
@@ -67,7 +67,7 @@ class IndexController extends Controller
         }
     
         return redirect()->back();
-    }
+    }//End Method
 
     public function SearchByDate(Request $request){
 
@@ -80,5 +80,17 @@ class IndexController extends Controller
         $news = NewsPost::where('post_date',$formatDate)->latest()->get();
         
         return view('frontend.news.search_by_date',compact('news','formatDate','newnewspost','newspopular'));
+    }//End Method
+
+    public function NewsSearch(Request $request){
+
+        $request->validate(['search' => "required"]);
+        $item = $request->search;
+        $news = NewsPost::where('news_title','LIKE',"%$item%")->orWhere('news_details', 'LIKE', "%$item%")->get();
+
+        $newnewspost = NewsPost::orderBy('id','DESC')->limit(8)->get();
+        $newspopular = NewsPost::orderBy('view_count','DESC')->limit(8)->get();
+
+        return view('frontend.news.search',compact('news','newnewspost','newspopular','item'));
     }
 }

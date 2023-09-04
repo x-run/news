@@ -1,6 +1,10 @@
 @extends('frontend.home_dashboard')
 @section('home')
 
+@section('title')
+{{ $breadcat->category_name}} | Wun Media | World Uchinanchu Media
+@endsection
+
 <div class="container">
     <div class="row">
         <div class="col-lg-12">

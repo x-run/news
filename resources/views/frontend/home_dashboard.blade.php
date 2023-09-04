@@ -12,7 +12,7 @@ $seo = App\Models\SeoSetting::find(1);
 
 
  
-<title>WUN Media | World Uchinanchu Network </title>
+<title>  @yield('title') </title>
  
 <link rel="shortcut icon" href="{{ asset('frontend/assets/images/favicon.gif')}}" type="image/x-icon">
  

@@ -12,8 +12,9 @@ $cdate = new DateTime();
                 </div>
             </div>
             <div class="col-lg-4 col-md-4">
-                <form class="header-search" action=" " method="post">
-                    <input type="text" value="" name="s" placeholder=" Search Here " required="">
+                <form class="header-search" action="{{route('news.search')}}" method="post">
+                    @csrf
+                    <input type="text" name="search" placeholder=" Search Here " required="">
                     <button type="submit" value="Search"> <i class="las la-search"></i> </button>
                 </form>
             </div>

@@ -1,6 +1,9 @@
 @extends('frontend.home_dashboard')
 @section('home')
 
+@section('title')
+Wun Media | World Uchinanchu Media
+@endsection
 <div class="container">
 <div class="row">
  <div class="col-lg-12 col-md-12">
