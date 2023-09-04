@@ -175,6 +175,8 @@
                 </a>
                 <div class="collapse" id="review">
                     <ul class="nav-second-level">
+@if($hideMenu) 
+@else           
                         <li>
                             <a href="{{ route('pending.review')}}">Pending Review</a>
                         </li>
@@ -184,7 +186,7 @@
                     </ul>
                 </div>
             </li>
-
+@endif
             <li>
                 <a href="#seo" data-bs-toggle="collapse">
                     <i class="mdi mdi-email-multiple-outline"></i>
@@ -193,14 +195,16 @@
                 </a>
                 <div class="collapse" id="seo">
                     <ul class="nav-second-level">
+@if($hideMenu)
+@else
                         <li>
                             <a href="{{ route('seo.setting')}}">Update Seo</a>
                         </li>
+@endif
                     </ul>
                 </div>
             </li>
-@if($hideMenu)
-@else
+
             <li class="menu-title mt-2">Setting</li>
 
             <li>
@@ -211,13 +215,15 @@
                 </a>
                 <div class="collapse" id="sidebarAuth">
                     <ul class="nav-second-level">
+@if($hideMenu)
+@else
                         <li>
                             <a href="{{ route('all.admin')}}">All Admin</a>
                         </li>
                         <li>
                             <a href="{{ route('add.admin')}}">Add Admin</a>
                         </li>
-     
+@endif
                     </ul>
                 </div>
             </li>
