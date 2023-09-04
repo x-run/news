@@ -1,6 +1,11 @@
 @extends('frontend.home_dashboard')
 @section('home')
 
+@section('title')
+Search By Date | WUN Media
+@endsection
+
+
 <div class="container">
 <div class="row">
 <div class="col-lg-12">

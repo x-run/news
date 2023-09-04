@@ -21,7 +21,7 @@ $cdate = new DateTime();
             <div class="col-lg-4 col-md-4">
                 <div class="header-social">
                     <ul>
-                        <li> <a href="https://www.facebook.com/" target="_blank" title="facebook"><i class="lab la-facebook-f"></i> </a> </li>
+                        <li> <a href="https://www.facebook.com/profile.php?id=61550691343308" target="_blank" title="facebook"><i class="lab la-facebook-f"></i> </a> </li>
                         <li><a href="https://www.instagram.com/wunmedia/" target="_blank" title="instagram"><i class="lab la-instagram"> </i> </a></li>
 
                         @auth 
