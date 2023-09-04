@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\NewsPostController;
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\PhotoGalleryController;
 use App\Http\Controllers\Backend\VideoGalleryController;
+use App\Http\Controllers\Backend\SeoSettingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -159,6 +160,12 @@ Route::controller(ReviewController::class)->group(function(){
     Route::get('/review/approve/{id}','ReviewApprove')->name('review.approve');
     Route::get('/approve/review','ApproveReview')->name('approve.review');
     Route::get('/delete/review/{id}','DeleteReview')->name('delete.review');
+});
+
+//SeoSetting All Route
+Route::controller(SeoSettingController::class)->group(function(){
+    Route::get('/seo/setting','SeoSiteSetting')->name('seo.setting');
+    Route::post('/update/seo/setting','UpdateSeoSetting')->name('update.seo.setting');
 });
 
 }); //End Admin Middleware

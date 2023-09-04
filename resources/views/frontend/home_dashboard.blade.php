@@ -1,5 +1,9 @@
 <!DOCTYPE html>
- 
+
+@php 
+$seo = App\Models\SeoSetting::find(1);
+@endphp
+
 <html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,9 +16,10 @@
  
 <link rel="shortcut icon" href="{{ asset('frontend/assets/images/favicon.gif')}}" type="image/x-icon">
  
-  
-<meta name="keywords" content="wun, wunmedia, media, 沖縄, ウチナーンチュ, 沖縄, online newspaper, news, news, bangla, newsportal">
-<meta name="description" content="沖縄の最新ニュースや文化、観光情報をお届けするオンラインメディア。地域の出来事からスポーツまで幅広いトピックを網羅したニュースサイトです。">
+ <meta name="title" content="{{ $seo->meta_title}}">
+ <meta name="author" content="{{ $seo->meta_author}}"> 
+<meta name="keywords" content="{{ $seo->meta_keyword}}">
+<meta name="description" content="{{ $seo->meta_description}}">
 
  <link rel="stylesheet" href="{{ asset('frontend/assets/css/line-awesome.min.css')}}" />
  <link rel="stylesheet" href="{{ asset('frontend/assets/css/headstyle.css')}}" />

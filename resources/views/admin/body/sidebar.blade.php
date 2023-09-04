@@ -184,6 +184,21 @@
                     </ul>
                 </div>
             </li>
+
+            <li>
+                <a href="#review" data-bs-toggle="collapse">
+                    <i class="mdi mdi-email-multiple-outline"></i>
+                    <span> Seo Setting </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="review">
+                    <ul class="nav-second-level">
+                        <li>
+                            <a href="{{ route('seo.setting')}}">Update Seo</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
 @if($hideMenu)
 @else
             <li class="menu-title mt-2">Setting</li>
