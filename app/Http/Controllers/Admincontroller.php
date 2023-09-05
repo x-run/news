@@ -53,6 +53,7 @@ class Admincontroller extends Controller
         $data->email = $request->email;
         $data->phone = $request->phone;
         $data->insta_url = $request->insta_url;
+        $data->facebook_url = $request->facebook_url;
         
         if ($request->file('photo')){
             $file = $request->file('photo');

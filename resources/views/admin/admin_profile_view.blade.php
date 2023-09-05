@@ -92,6 +92,13 @@
                                                 <input type="text" name="insta_url" class="form-control" id="social-insta" value="{{ $adminData->insta_url}}">
                                             </div>
                                         </div>
+                                        <div class="mb-3">
+                                            <label for="social-facebook" class="form-label">FaceBook</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fab fa-facebook"></i></span>
+                                                <input type="text" name="facebook_url" class="form-control" id="social-facebook" value="{{ $adminData->facebook_url}}">
+                                            </div>
+                                        </div>
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="example-fileinput" class="form-label">Admin Photo</label>

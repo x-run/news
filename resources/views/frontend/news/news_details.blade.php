@@ -41,7 +41,7 @@
                 <div class="col-lg-11 col-md-10">
                     <div class="reportar-title">
                         @if(isset($news['user']['name']))
-                            Posted by {{ $news['user']['name']}}
+                            Posted by <a href="{{ route('reporter.all.news',$news->user_id)}}">{{ $news['user']['name']}}</a>
                         @endif
                     </div>
                     <div class="viwe-count">
