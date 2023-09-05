@@ -35,7 +35,9 @@
             <div class="row g-2">
                 <div class="col-lg-1 col-md-2 ">
                     <div class="reportar-image">
-                        <img src="{{ (!empty($news->user->photo)) ? url('upload/admin_images/' . $news->user->photo): url('upload/no_image.jpg') }}">
+                        <a href="{{ route('reporter.all.news',$news->user_id)}}">
+                            <img src="{{ (!empty($news->user->photo)) ? url('upload/admin_images/' . $news->user->photo): url('upload/no_image.jpg') }}">
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-11 col-md-10">
