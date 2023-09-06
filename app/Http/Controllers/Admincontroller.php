@@ -6,13 +6,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse; 
 use App\Models\User;
+use App\Models\NewsPost;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+
 class Admincontroller extends Controller
 {
     public function AdminDashboard(){
-        return view('admin.index');
-    }
-    //End Method
+        $totalRevenue = NewsPost::sum('view_count');
+
+        //$user = Auth::user();
+        //$totalViewCount = $user->newsPost->sum('view_count');
+    return view('admin.index',compact('totalRevenue',/*'totalViewCount'*/));
+    }//End Method
 
     public function AdminLogout(Request $request): RedirectResponse
     {

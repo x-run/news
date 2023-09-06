@@ -174,6 +174,7 @@ Route::controller(SeoSettingController::class)->group(function(){
 Route::get('/news/details/{id}/{slug}',[IndexController::class,'NewsDetails']);
 Route::get('/news/category/{id}/{slug}',[IndexController::class,'CatWiseNews']);
 //Route::get('/lang/change',[IndexController::class,'Change'])->name('changeLang');
+Route::get('/search',[IndexController::class,'SearchByDate'])->name('search-by-date');
 Route::post('/search',[IndexController::class,'SearchByDate'])->name('search-by-date');
 Route::post('/store/review',[ReviewController::class,'StoreReview'])->name('store.review');
 Route::post('/news/search',[IndexController::class,'NewsSearch'])->name('news.search');

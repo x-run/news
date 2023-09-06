@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Session;
 use App;
 use DateTime;
 use App\Models\User;
+use Illuminate\Pagination\Paginator;
 
 class IndexController extends Controller
 {
@@ -43,7 +44,8 @@ class IndexController extends Controller
 
     public function CatWiseNews($id,$slug){
 
-        $news = NewsPost::where('status',1)->where('category_id',$id)->orderBy('id','DESC')->get();
+        $news = NewsPost::where('status',1)->where('category_id',$id)->orderBy('id','DESC')->paginate(10);
+        Paginator::useBootstrap();
 
         $breadcat = Category::where('id',$id)->first();
 
@@ -78,7 +80,8 @@ class IndexController extends Controller
         $newnewspost = NewsPost::orderBy('id','DESC')->limit(8)->get();
         $newspopular = NewsPost::orderBy('view_count','DESC')->limit(8)->get();
 
-        $news = NewsPost::where('post_date',$formatDate)->latest()->get();
+        $news = NewsPost::where('post_date',$formatDate)->latest()->paginate(9);
+        Paginator::useBootstrap();
         
         return view('frontend.news.search_by_date',compact('news','formatDate','newnewspost','newspopular'));
     }//End Method
@@ -87,7 +90,13 @@ class IndexController extends Controller
 
         $request->validate(['search' => "required"]);
         $item = $request->search;
-        $news = NewsPost::where('news_title','LIKE',"%$item%")->orWhere('news_details', 'LIKE', "%$item%")->get();
+        
+        $news = NewsPost::where('news_title','LIKE',"%$item%")
+        ->orWhere('news_details', 'LIKE', "%$item%")
+        ->orWhereHas('user', function ($query) use ($item) {
+            $query->where('name', 'LIKE', "%$item%");
+        })
+        ->get();
 
         $newnewspost = NewsPost::orderBy('id','DESC')->limit(8)->get();
         $newspopular = NewsPost::orderBy('view_count','DESC')->limit(8)->get();
@@ -97,8 +106,9 @@ class IndexController extends Controller
 
     public function ReporterNews($id){
         $reporter = User::findOrFail($id);
-        $news = NewsPost::where('user_id',$id)->get();
+        $news = NewsPost::where('user_id',$id)->paginate(10);
+        Paginator::useBootstrap();
 
         return view('frontend.reporter.reporter_news_post',compact('reporter','news'));
-    }
+    }//End Method
 }
