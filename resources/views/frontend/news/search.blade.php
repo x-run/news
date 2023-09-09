@@ -56,14 +56,10 @@ Search Page | WUN Media
 </div>
 </div>
 
+<div class="pagination">
+                        {{ $news->links()}}
+                    </div>
 
-<div class="row">
-<div class="col-md-12">
-<span aria-current="page" class="page-numbers current">1</span>
-<a class="page-numbers" href=" ">2</a>
-<a class="next page-numbers" href=" ">Next »</a>
-</div>
-</div>
 
 <br><br>
 

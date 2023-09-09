@@ -8,10 +8,14 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Review;
 use Carbon\Carbon;
+use App\Notifications\ReviewNotification;
+use Illuminate\Support\Facades\Notification;
 
 class ReviewController extends Controller
 {
     public function StoreReview(Request $request){
+        $user = User::where('role', 'admin')->get();
+
         $news = $request->news_id;
         $request->validate([
             'comment' => 'required',
@@ -23,6 +27,8 @@ class ReviewController extends Controller
             'comment' => $request->comment,
             'created_at' => Carbon::now(),
         ]);
+
+        Notification::send($user,new ReviewNotification($request));
 
         return back()->with("status","管理者にレビューの申請を行いました");
     }//End Method
@@ -57,4 +63,12 @@ class ReviewController extends Controller
 
         return redirect()->back()->with($notification);
     }//End Method
+
+    public function clearAllNotifications()
+    {
+        // ログイン中のユーザーに関連するすべての通知を削除
+        Auth::user()->notifications()->delete();
+
+        return redirect()->back()->with('success', 'All notifications cleared successfully');
+    }
 }

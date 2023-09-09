@@ -96,7 +96,8 @@ class IndexController extends Controller
         ->orWhereHas('user', function ($query) use ($item) {
             $query->where('name', 'LIKE', "%$item%");
         })
-        ->get();
+        ->paginate(10);
+        Paginator::useBootstrap();
 
         $newnewspost = NewsPost::orderBy('id','DESC')->limit(8)->get();
         $newspopular = NewsPost::orderBy('view_count','DESC')->limit(8)->get();
@@ -106,7 +107,7 @@ class IndexController extends Controller
 
     public function ReporterNews($id){
         $reporter = User::findOrFail($id);
-        $news = NewsPost::where('user_id',$id)->paginate(10);
+        $news = NewsPost::where('user_id',$id)->paginate(8);
         Paginator::useBootstrap();
 
         return view('frontend.reporter.reporter_news_post',compact('reporter','news'));
