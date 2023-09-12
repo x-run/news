@@ -6,79 +6,71 @@ Search Page | WUN Media
 @endsection
 
 <div class="container">
-<div class="row">
-<div class="col-lg-12">
-<div class="archive-topAdd">
-</div>
-</div>
-</div>
- <div class="row">
-<div class="col-lg-8 col-md-8">
-<div class="rachive-info-cats">
-<a href=" "><i class="las la-home"></i> </a> <i class="las la-chevron-right"></i> Search By {{ $item}}
-</div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="archive-topAdd">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 col-md-8">
+            <div class="rachive-info-cats">
+                <a href=" "><i class="las la-home"></i> </a> <i class="las la-chevron-right"></i> Search By {{ $item}}
+            </div>
  
-<div class="row">
+            <div class="row">
 
-@foreach($news as $item)
-<div class="archive1-custom-col-3">
-<div class="archive-item-wrpp2">
-<div class="archive-shadow arch_margin">
-<div class="archive1_image2">
-<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug)}}"><img class="lazyload" src="{{ asset($item->image)}}"  ></a>
-<div class="archive1-meta">
-<a href=" "><i class="la la-tags"> </i>
-{{ $item->created_at->format('M d Y')}}
-</a>
-</div>
-</div>
-<div class="archive1-padding">
-<div class="archive1-title2"><a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug)}}">{{ $item->news_title }}</a></div>
-</div>
-</div>
-</div>
-</div>
-@endforeach
-
-
-
-
-
-
-
-
-
-</div>
-<div class="archive1-margin">
-<div class="archive-content">
-<div class="row">
-</div>
-</div>
-</div>
-
-<div class="pagination">
-                        {{ $news->links()}}
+                @foreach($news as $item)
+                <div class="archive1-custom-col-3">
+                    <div class="archive-item-wrpp2">
+                        <div class="archive-shadow arch_margin">
+                            <div class="archive1_image2">
+                                <a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug)}}"><img class="lazyload" src="{{ asset($item->image)}}"  ></a>
+                                    <div class="archive1-meta">
+                                <a href=" "><i class="la la-tags"> </i>
+                                    {{ $item->created_at->format('M d Y')}}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="archive1-padding">
+                            <div class="archive1-title2"><a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug)}}">{{ $item->news_title }}</a></div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                @endforeach
+            </div>
+            <div class="archive1-margin">
+                <div class="archive-content">
+                    <div class="row">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                {{ $news->links()}}
+            </div>
 
 
-<br><br>
+            <br><br>
 
-<div class="row">
-<div class="col-lg-12 col-md-12"></div>
-</div>
-</div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                </div>
+            </div>
+        </div>
 
 
         <div class="col-lg-4 col-md-4">
 
-        <div class="themesBazar_widget">
-<h3 style="margin-top:5px"> OLD NEWS </h3>
-</div>
-<form class="wordpress-date" action="{{ route('search-by-date')}} " method="post">
-  @csrf
-<input type="date" id="wordpress" placeholder="Select Date" autocomplete="off" name="date" required="" class="hasDatepicker">
-<input type="submit" value="Search">
-</form>
+            <div class="themesBazar_widget">
+                <h3 style="margin-top:5px"> OLD NEWS </h3>
+            </div>
+            <form class="wordpress-date" action="{{ route('search-by-date')}} " method="post">
+            @csrf
+                <input type="date" id="wordpress" placeholder="Select Date" autocomplete="off" name="date" required="" class="hasDatepicker">
+                <input type="submit" value="Search">
+            </form>
             <div class="sitebar-fixd" style="position: sticky; top: 0;">
                 <div class="archivePopular">
                     <ul class="nav nav-pills" id="archivePopular-tab" role="tablist">
