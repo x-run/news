@@ -211,7 +211,6 @@ $banner = App\Models\Banner::find(1);
 </div> </div>
 </div>
 </div>
-
 @php
 $news = App\Models\NewsPost::where('status',1)->orderBy('id','DESC')->limit(8)->get();
 $categories = App\Models\Category::orderBy('category_name','DESC')->get();
@@ -314,100 +313,61 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 <div class="row">
 <div class="col-lg-8 col-md-8">
 
-<h2 class="themesBazar_cat07"> <a href=" "> <i class="las la-align-justify"></i> NATIONAL </a> </h2>
+<h2 class="themesBazar_cat07"> <a href="{{ url('news/category/'.$skip_cat_0->id.'/'.$skip_cat_0->category_slug) }}"> <i class="las la-align-justify"></i> {{ $skip_cat_0->category_name }} </a> </h2>
 
 <div class="row">
 <div class="col-lg-6 col-md-6">
+
+@foreach($skip_news_0 as $item)
+@if($loop->index < 1 )
 <div class="secThree-bg">
 <div class="sec-theee-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
 </div>
 <h4 class="secThree-title">
-<a href=" ">College tops the best list again </a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{ $item->news_title }}</a>
 </h4>
 </div>
-<div class="row">
-<div class="themesBazar-2 themesBazar-m2">
-<div class="secThree-wrpp">
-<div class="sec-theee-image2">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
+@endif
+@endforeach
+
 </div>
-<h4 class="secThree-title2">
-<a href=" ">College tops the best list again </a>
-</h4>
-</div>
-</div>
-<div class="themesBazar-2 themesBazar-m2">
- <div class="secThree-wrpp">
-<div class="sec-theee-image2">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-</div>
-<h4 class="secThree-title2">
-<a href=" ">College tops the best list again </a>
-</h4>
-</div>
-</div>
-</div>
-</div>
+
 <div class="col-lg-6 col-md-6">
 <div class="bg2">
+
+@foreach($skip_news_0 as $item)
+@if($loop->index > -1 )
 <div class="secThree-smallItem">
 <div class="secThree-smallImg">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<a href=" " class="small-icon3"><i class="la la-play"></i></a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}" class="small-icon3"><i class="la la-play"></i></a>
 <h5 class="secOne_smallTitle">
-<a href=" ">College tops the best list again </a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{ $item->news_title}} </a>
 </h5>
 </div>
 </div>
-<div class="secThree-smallItem">
-<div class="secThree-smallImg">
-<a href="  "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
-<h5 class="secOne_smallTitle">
-<a href=" ">College tops the best list again </a>
-</h5>
-</div>
-</div>
-<div class="secThree-smallItem">
-<div class="secThree-smallImg">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secOne_smallTitle">
-<a href=" ">College tops the best list again </a>
-</h5>
-</div>
-</div>
-<div class="secThree-smallItem">
-<div class="secThree-smallImg">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
-<h5 class="secOne_smallTitle">
-<a href=" ">College tops the best list again </a>
-</h5>
-</div>
-</div>
-<div class="secThree-smallItem">
-<div class="secThree-smallImg">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secOne_smallTitle">
-<a href=" ">College tops the best list again </a>
-</h5>
-</div>
-</div>
+@endif
+@endforeach
+
 </div>
 </div>
 </div>
 </div>
 <div class="col-lg-4 col-md-4">
 
-<h2 class="themesBazar_cat07"> <a href=" "> <i class="las la-map-marker"></i>POLITICS </a> </h2>
+
+
 
 <div class="map-area" style="width:100%; background: #eff3f4;">
 <div style="padding:5px 35px 0px 35px;">
- <img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
+ <img class="lazyload" src="{{ asset('frontend/assets/images/tw_card.jpg')}}"  ></a>
+ <img class="lazyload" src="{{ asset('frontend/assets/images/tw_card.jpg')}}"  ></a>
  <br> <br> 
-  <img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
- 
+  
 </div>
 </div>
+
 </div>
 </div>
 </section>
@@ -434,7 +394,7 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 <div class="row">
 <div class="col-lg-12 col-md-12">
 
-<h2 class="themesBazar_cat04"> <a href=" "> <i class="las la-align-justify"></i> POLITICS </a> </h2>
+<h2 class="themesBazar_cat04"> <a href="{{ url('news/category/'.$skip_cat_1->id.'/'.$skip_cat_1->category_slug) }}"> <i class="las la-align-justify"></i>{{ $skip_cat_1->category_name }}</a> </h2>
 
 <div class="secFour-slider owl-carousel owl-loaded owl-drag">
 
@@ -445,119 +405,20 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 
 
 
-<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-3294px, 0px, 0px); transition: all 1s ease 0s; width: 4792px;"><div class="owl-item cloned" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
+<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-3294px, 0px, 0px); transition: all 1s ease 0s; width: 4792px;">
+
+@foreach($skip_news_1 as $item)
+<div class="owl-item" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
 <div class="secFour-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"><img class="lazyload" src="{{ asset($item->image)}}" ></a>
 <h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{ $item->news_title }}</a>
 </h5>
 </div>
-</div></div><div class="owl-item cloned" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
- </div>
-</div></div><div class="owl-item cloned" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item cloned" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
- </div>
-</div></div><div class="owl-item" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item active" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item cloned active" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item cloned active" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item cloned active" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item cloned" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><i class="las la-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="las la-angle-right"></i></button></div><div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot active"><span></span></button></div></div>
+</div></div>
+@endforeach
+
+</div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><i class="las la-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="las la-angle-right"></i></button></div><div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot active"><span></span></button></div></div>
 </div>
 </div>
 </div>
@@ -581,31 +442,34 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 <div class="row">
 <div class="col-lg-4 col-md-4">
 
-<h2 class="themesBazar_cat01"> <a href=" "> BIZ-ECON </a> <span> <a href=" "> More <i class="las la-arrow-circle-right"></i> </a></span> </h2>
+<h2 class="themesBazar_cat01"> <a href="{{ url('news/category/'.$skip_cat_1->id.'/'.$skip_cat_1->category_slug) }}"> {{ $skip_cat_2->category_name }}</a> <span> <a href="{{ url('news/category/'.$skip_cat_1->id.'/'.$skip_cat_1->category_slug) }}"> More <i class="las la-arrow-circle-right"></i> </a></span> </h2>
 
+@foreach($skip_news_2 as $item)
+@if($loop->index < 1)
 <div class="white-bg">
 <div class="secFive-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
 <div class="secFive-title">
-<a href=" ">Recovering money from selling rights</a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{ $item->news_title }}</a>
 </div>
 </div>
+@endif
+@endforeach
+
+
+@foreach($skip_news_2 as $item)
+@if($loop->index > 0)
 <div class="secFive-smallItem">
 <div class="secFive-smallImg">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
 <h5 class="secFive_title2">
-<a href=" ">Recovering money from selling rights</a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{ $item->news_title }}</a>
 </h5>
 </div>
 </div>
-<div class="secFive-smallItem">
-<div class="secFive-smallImg">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secFive_title2">
-<a href=" ">Recovering money from selling rights</a>
-</h5>
- </div>
-</div>
+@endif
+@endforeach
+
 </div>
 </div>
 <div class="col-lg-4 col-md-4">
@@ -823,65 +687,50 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 <section class="section-seven">
 <div class="container">
 
-<h2 class="themesBazar_cat01"> <a href=" "> SPORTS </a> <span> <a href=" "> More <i class="las la-arrow-circle-right"></i> </a></span> </h2>
+<h2 class="themesBazar_cat01"> <a href="{{ url('news/category/'.$skip_cat_3->id.'/'.$skip_cat_3->category_slug) }}">{{ $skip_cat_3->category_name}}</a> <span> <a href="{{ url('news/category/'.$skip_cat_3->id.'/'.$skip_cat_3->category_slug) }}"> More <i class="las la-arrow-circle-right"></i> </a></span> </h2>
 
 <div class="secSecven-color">
 <div class="row">
+
 <div class="col-lg-5 col-md-5">
+
+@foreach($skip_news_3 as $item)
+@if($loop->index < 1)
 <div class="black-bg">
+
 <div class="secSeven-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a> <a href=" " class="video-icon6"><i class="la la-play"></i></a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"><img class="lazyload" src="{{ asset($item->image) }}"  ></a> <a href=" " class="video-icon6"><i class="la la-play"></i></a>
 </div>
 <h6 class="secSeven-title">
-<a href=" ">Sachin backs Arshdeep after crucial dropped catch </a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{ $item->news_title }}</a>
 </h6>
 <div class="secSeven-details">
-If filmmakers recover their money from selling OTT, satellite and music rights, how much do ticket sales matter? According to Johar, ticket sales is of utmost<a href=" "> More..</a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"> More..</a>
 </div>
 </div>
+@endif
+@endforeach
+
 </div>
+
 <div class="col-lg-7 col-md-7">
 <div class="row">
+
+@foreach($skip_news_3 as $item)
+@if($loop->index > 0)
 <div class="themesBazar-2 themesBazar-m2">
 <div class="secSeven-wrpp ">
 <div class="secSeven-image2">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
 <h5 class="secSeven-title2">
-<a href=" ">How Neymar, Mbappe & Messi are finally thriving at PSG </a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{ $item->news_title }}</a>
 </h5>
 </div>
 </div>
 </div>
-<div class="themesBazar-2 themesBazar-m2">
-<div class="secSeven-wrpp ">
-<div class="secSeven-image2">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secSeven-title2">
-<a href=" ">How Neymar, Mbappe & Messi are finally thriving at PSG </a>
-</h5>
-</div>
-</div>
-</div>
-<div class="themesBazar-2 themesBazar-m2">
-<div class="secSeven-wrpp ">
-<div class="secSeven-image2">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secSeven-title2">
-<a href=" ">How Neymar, Mbappe & Messi are finally thriving at PSG </a>
-</h5>
-</div>
-</div>
-</div>
-<div class="themesBazar-2 themesBazar-m2">
-<div class="secSeven-wrpp ">
-<div class="secSeven-image2">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<h5 class="secSeven-title2">
-<a href=" ">How Neymar, Mbappe & Messi are finally thriving at PSG </a>
-</h5>
-</div>
-</div>
-</div>
+@endif
+@endforeach
+
 </div>
 </div>
 </div>
