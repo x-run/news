@@ -46,7 +46,12 @@
                     <ul class="social-list list-inline mt-3 mb-0">
                         <li class="list-inline-item">
                             <a href="{{ $adminData->insta_url}}"  target="_blank" rel="noopener noreferrer" >
-                                <img src="{{ asset('frontend/assets/images/instagram.png')}}" alt="" style="width: 45px;">
+                                <img src="{{ asset('frontend/assets/images/instagram.png')}}" alt="instagram" style="width: 45px;">
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="{{ $adminData->facebook_url}}"  target="_blank" rel="noopener noreferrer" >
+                                <img src="{{ asset('frontend/assets/images/facebook.png')}}" alt="facebook" style="width: 45px;">
                             </a>
                         </li>
                     </ul>                                                      

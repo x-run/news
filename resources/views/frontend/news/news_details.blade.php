@@ -86,14 +86,17 @@
                 </div>
             </div>
 
-            <h3 class="single-social-title">Share News </h3>
+            <h3 class="single-social-title">SNS Links</h3>
             <div class="single-page-social">
-                <a href=" " target="_blank" title="Facebook"><i class="lab la-facebook-f"></i></a><a href=" " target="_blank"><i class="lab la-twitter"></i></a><a href=" " target="_blank"><i class="lab la-linkedin-in"></i></a><a href=" " target="_blank"><i class="lab la-digg"></i></a><a href=" " target="_blank"><i class="lab la-pinterest-p"></i></a><a onclick="printFunction()" target="_blank"><i class="las la-print"></i> <script>
-                    function printFunction() {
-                        window.print();
-                    }
-                    </script> </a>
+                @if(!empty($news['user']['insta_url']))
+                <a href="{{ $news['user']['insta_url'] }}" target="_blank" title="Instagram"><i class="lab la-instagram"></i></a>
+                @endif
+
+                @if(!empty($news['user']['facebook_url']))
+                <a href="{{ $news['user']['facebook_url'] }}" target="_blank" title="Facebook"><i class="lab la-facebook-f"></i></a>
+                @endif
             </div>
+
 
             @php
             $review = App\Models\Review::where('news_id',$news->id)->inRandomOrder()->limit(5)->get();
