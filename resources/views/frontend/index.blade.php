@@ -450,7 +450,7 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 <div class="secFive-image">
 <a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
 <div class="secFive-title">
-<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{ $item->news_title }}</a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}" style="color: white;">{{ $item->news_title }}</a>
 </div>
 </div>
 @endif
