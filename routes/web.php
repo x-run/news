@@ -106,7 +106,7 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('/add/admin','AddAdmin')->name('add.admin');
     Route::post('/store/admin','StoreAdmin')->name('admin.store');
     Route::get('/edit/admin/{id}','EditAdmin')->name('edit.admin');
-    Route::post('/update/category','UpdateCategory')->name('category.update');
+    #Route::post('/update/category','UpdateCategory')->name('category.update');
     Route::get('/delete/admin/{id}','DeleteAdmin')->name('delete.admin');
 
     Route::get('/inactive/admin/user/{id}','InactiveAdminUser')->name('inactive.admin.user');

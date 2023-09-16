@@ -21,7 +21,7 @@
                 <div class="single-cats">
                     <i class="la la-bars"></i>
 					@if(isset($news['category']['category_name']))
-						<a href=" " rel="category tag">{{$news['category']['category_name']}}</a>
+						<a href="{{ url('news/category/'.$news['category']->id.'/'.$news['category']->category_slug) }}" rel="category tag">{{$news['category']['category_name']}}</a>
 					@endif
                 </div>
             </div>

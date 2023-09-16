@@ -21,7 +21,7 @@ Wun Media | World Uchinanchu Media
 <div class="themesbazar_led_active owl-carousel owl-loaded owl-drag">
 
 @php
-$news_slider = App\Models\NewsPost::where('status',1)->where('top_slider',1)->inRandomOrder()->limit(7)->get();
+$news_slider = App\Models\NewsPost::where('status',1)->where('top_slider',1)->orderBy('id','DESC')->limit(7)->get();
 @endphp
 
 <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1578px, 0px, 0px); transition: all 1s ease 0s; width: 3684px;">
