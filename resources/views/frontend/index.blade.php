@@ -178,19 +178,16 @@ $live = App\Models\LiveTv::find(1);
 </div>
 </div>
 </div>
+
+
 <div class="themesBazar_widget">
-<h3 style="margin-top:5px"> Our Like Page </h3>
+  <h3 style="margin-top:5px"> Our Like Page </h3>
 </div>
 <div class="facebook-content">
-<iframe src=" " width="260" height="170" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CxHjYhrrPdm/" data-instgrm-version="13"></blockquote>
+      <script async src="//www.instagram.com/embed.js"></script>
 </div>
-<div class="themesBazar_widget">
-<h3 style="margin-top:5px"> Our Like Page </h3>
-</div>
-<div class="facebook-content">
-<div class="twitter-timeline twitter-timeline-rendered" style="display: flex; width: 410px; max-width: 100%; margin-top: 0px; margin-bottom: 0px;"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="" style="position: static; visibility: visible; width: 279px; height: 220px; display: block; flex-grow: 1;" title="Twitter Timeline" src=" "></iframe></div> <script async="" src="{{ asset('frontend/')}}assets/js/widgets.js" charset="utf-8"></script>
-</div>
-</div>
+
 </div>
 </div>
 </section>
