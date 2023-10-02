@@ -84,9 +84,7 @@ $cdate = new DateTime();
                         </li>
                         @endforeach
 
-                        <li id="menu-item-292" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-292">
-                            <a href=" ">ARCRIVE</a>
-                        </li>
+                        
                     </ul>
                 </div>
             </div>
