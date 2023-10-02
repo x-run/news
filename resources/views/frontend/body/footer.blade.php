@@ -3,10 +3,9 @@
         <div class="footer-menu">
             <div class="menu-footer-menu-container">
                 <ul id="menu-footer-menu" class="menu">
-                    <li id="menu-item-550" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a href=" "></a></li>
-                    <li id="menu-item-551" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-551"><a href=" ">COMPANY</a></li>
-                    <li id="menu-item-552" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-552"><a href=" ">ABOUT US</a></li>
-                    <li id="menu-item-553" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-553"><a href=" ">PHOTO GALLERY</a></li>
+                    <li id="menu-item-550" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a href="#">トップ</a></li>
+                    <li id="menu-item-551" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-551"><a href="#footer-middle">ミドル</a></li>
+                    <li id="menu-item-552" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-552"><a href="#footer-bottom">ボトム</a></li>
                 </ul>
             </div>
         </div>
@@ -15,19 +14,17 @@
                 <div class="col-lg-5 col-md-5">
                     <h3 class="footer-title">OFFICE :</h3>
                     <div class="footer-content">
-                        <p style="text-align: left;">Ga-130/A</p>
-                        <p style="text-align: left;">EMAIL : support@nakazato.syo.com</p>
-                        <p style="text-align: left;">MOBILE : 4334343434</p>
+                        <p style="text-align: left;">OFFICE : 存在しません</p>
+                        <p style="text-align: left;">EMAIL : wunmedia2@gmail.com</p>
+                        <p style="text-align: left;">MOBILE : 090-9780-8578</p>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-7">
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
-                            <h3 class="footer-title">DEMO TEXT</h3>
+                            <h3 class="footer-title">同志求</h3>
                             <div class="footer-content">
-                                <p style="text-align: left;">DEMO TEXT : DEMO TEXT</p>
-                                <p style="text-align: left;">DEMO TEXT : DEMO TEXT</p>
-                                <p style="text-align: left;">DEMO TEXT : DEMO TEXT</p>
+                                <p style="text-align: left;">連絡待ってます。</p>
                             </div>
                         </div>
                     </div>
@@ -37,10 +34,10 @@
         <div class="copy_right_section">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
-                    <div class="copy-right">© All rights reserved © AAA</div>
+                    <div class="copy-right">© All rights reserved © WUN MEDIA</div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <div class="design-developed">Theme Developed BY <a href=" " target="_blank">nakazato.syo.Com</a></div>
+                    <div class="design-developed">Theme Developed BY <a href=" " target="_blank">nakazato.syo</a></div>
                 </div>
             </div>
         </div>

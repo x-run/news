@@ -216,7 +216,7 @@ $news = App\Models\NewsPost::where('status',1)->orderBy('id','DESC')->limit(8)->
 $categories = App\Models\Category::orderBy('category_name','DESC')->get();
 @endphp
 
-<section class="section-two">
+<section id="footer-middle" class="section-two">
 <div class="container">
 <div class="secTwo-color">
 <div class="row">
@@ -684,7 +684,7 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 </div>
 </div>
 
-<section class="section-seven">
+<section id="footer-bottom" class="section-seven">
 <div class="container">
 
 <h2 class="themesBazar_cat01"> <a href="{{ url('news/category/'.$skip_cat_3->id.'/'.$skip_cat_3->category_slug) }}">{{ $skip_cat_3->category_name}}</a> <span> <a href="{{ url('news/category/'.$skip_cat_3->id.'/'.$skip_cat_3->category_slug) }}"> More <i class="las la-arrow-circle-right"></i> </a></span> </h2>
