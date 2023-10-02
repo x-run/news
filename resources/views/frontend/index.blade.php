@@ -367,15 +367,15 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 <div class="container">
 <div class="row">
 <div class="col-lg-4 col-md-4">
-<div class="themesBazar_widget"> <div class="textwidget"><p><img loading="lazy" class="aligncenter size-full wp-image-74" src="{{ asset('frontend/')}}assets/images/biggapon-1.gif" alt="" width="100%" height="auto"></p>
+<div class="themesBazar_widget"> <div class="textwidget"><p><img loading="lazy" class="aligncenter size-full wp-image-74" src="" alt="" width="100%" height="auto"></p>
 </div>
 </div> </div>
 <div class="col-lg-4 col-md-4">
-<div class="themesBazar_widget"> <div class="textwidget"><p><img loading="lazy" class="aligncenter size-full wp-image-74" src="{{ asset('frontend/')}}assets/images/biggapon-1.gif" alt="" width="100%" height="auto"></p>
+<div class="themesBazar_widget"> <div class="textwidget"><p><img loading="lazy" class="aligncenter size-full wp-image-74" src="" alt="" width="100%" height="auto"></p>
 </div>
 </div> </div>
 <div class="col-lg-4 col-md-4">
-<div class="themesBazar_widget"> <div class="textwidget"><p><img loading="lazy" class="aligncenter size-full wp-image-74" src="{{ asset('frontend/')}}assets/images/biggapon-1.gif" alt="" width="100%" height="auto"></p>
+<div class="themesBazar_widget"> <div class="textwidget"><p><img loading="lazy" class="aligncenter size-full wp-image-74" src="" alt="" width="100%" height="auto"></p>
 </div>
 </div> </div>
 </div>
