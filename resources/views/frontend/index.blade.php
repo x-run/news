@@ -180,13 +180,7 @@ $live = App\Models\LiveTv::find(1);
 </div>
 
 
-<div class="themesBazar_widget">
-  <h3 style="margin-top:5px"> Our Like Page </h3>
-</div>
-<div class="facebook-content">
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CxHjYhrrPdm/" data-instgrm-version="13"></blockquote>
-      <script async src="//www.instagram.com/embed.js"></script>
-</div>
+
 
 </div>
 </div>
@@ -356,14 +350,15 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 
 
 
-<div class="map-area" style="width:100%; background: #eff3f4;">
-<div style="padding:5px 35px 0px 35px;">
- <img class="lazyload" src="{{ asset('frontend/assets/images/tw_card.jpg')}}"  ></a>
- <img class="lazyload" src="{{ asset('frontend/assets/images/tw_card.jpg')}}"  ></a>
- <br> <br> 
-  
+
+<div class="themesBazar_widget">
+  <h3 style="margin-top:5px"> Our Like Page </h3>
 </div>
+<div class="facebook-content">
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CxHjYhrrPdm/" data-instgrm-version="13"></blockquote>
+      <script async src="//www.instagram.com/embed.js"></script>
 </div>
+
 
 </div>
 </div>
