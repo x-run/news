@@ -19,28 +19,39 @@ class PhotoGalleryController extends Controller
         return view('backend.photo.add_photo');
     }//End Method
 
-    public function StorePhotoGallery(Request $request){
-        $image = $request->file('multi_image');
+    public function StorePhotoGallery(Request $request)
+{
+    $images = $request->file('multi_image');
 
-        foreach($image as $multi_image){
-            $name_gen = hexdec(uniqid()).'.'.$multi_image->getClientOriginalExtension();
-            Image::make($multi_image)->resize(700,400)->save('upload/multi/'.$name_gen);
-            $save_url = 'upload/multi/'.$name_gen;
-
-            PhotoGallery::insert([
-                'photo_gallery' => $save_url,
-                'post_date' => Carbon::now()->format('d F Y'),
-            ]);
+    foreach ($images as $multi_image) {
+        $extension = $multi_image->getClientOriginalExtension();
+        
+        if (in_array(strtolower($extension), ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'])) {
+            // SVG以外の画像を処理する
+            $name_gen = hexdec(uniqid()) . '.' . $extension;
+            Image::make($multi_image)->resize(700, 400)->save('upload/multi/' . $name_gen);
+            $save_url = 'upload/multi/' . $name_gen;
+        } else {
+            // SVG画像を異なる方法で処理する例（必要に応じてカスタマイズ）
+            $name_gen = hexdec(uniqid()) . '.svg';
+            $multi_image->move('upload/multi/', $name_gen);
+            $save_url = 'upload/multi/' . $name_gen;
         }
 
-        $notification = array(
-            'message' => 'Photo Gallery Inserted Successfully',
-            'alert-type' => 'success'
+        PhotoGallery::insert([
+            'photo_gallery' => $save_url,
+            'post_date' => Carbon::now()->format('d F Y'),
+        ]);
+    }
 
-        );
+    $notification = array(
+        'message' => '写真ギャラリーが正常に挿入されました',
+        'alert-type' => 'success'
+    );
 
-        return redirect()->route('all.photo.gallery')->with($notification);
-    }// End Method
+    return redirect()->route('all.photo.gallery')->with($notification);
+}
+
 
     public function EditPhotoGallery($id){
 
