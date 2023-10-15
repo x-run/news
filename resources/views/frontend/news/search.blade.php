@@ -67,7 +67,7 @@ Search Page | WUN Media
                 <h3 style="margin-top:5px"> OLD NEWS </h3>
             </div>
             <form class="wordpress-date" action="{{ route('search-by-date')}} " method="post">
-            @csrf
+                @csrf
                 <input type="date" id="wordpress" placeholder="Select Date" autocomplete="off" name="date" required="" class="hasDatepicker">
                 <input type="submit" value="Search">
             </form>

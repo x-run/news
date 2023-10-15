@@ -110,7 +110,7 @@ class IndexController extends Controller
         ->orWhereHas('user', function ($query) use ($item) {
             $query->where('name', 'LIKE', "%$item%");
         })
-        ->paginate(10);
+        ->paginate(20);
         Paginator::useBootstrap();
 
         $newnewspost = NewsPost::orderBy('id','DESC')->limit(8)->get();
