@@ -355,8 +355,11 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
   <h3 style="margin-top:5px"> Our Like Page </h3>
 </div>
 <div class="facebook-content">
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CxHjYhrrPdm/" data-instgrm-version="13"></blockquote>
-      <script async src="//www.instagram.com/embed.js"></script>
+<iframe src="https://www.instagram.com/p/CyZ3vLLr3Cn/embed" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+
+
+
+
 </div>
 
 
