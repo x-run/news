@@ -106,6 +106,7 @@ class IndexController extends Controller
         
         $news = NewsPost::where('news_title','LIKE',"%$item%")
         ->orWhere('news_details', 'LIKE', "%$item%")
+        ->orWhere('tags', 'LIKE', "%$item%") // tags フィールドを追加
         ->orWhereHas('user', function ($query) use ($item) {
             $query->where('name', 'LIKE', "%$item%");
         })

@@ -178,6 +178,7 @@ Route::get('/search',[IndexController::class,'SearchByDate'])->name('search-by-d
 Route::post('/search',[IndexController::class,'SearchByDate'])->name('search-by-date');
 Route::post('/store/review',[ReviewController::class,'StoreReview'])->name('store.review');
 Route::post('/news/search',[IndexController::class,'NewsSearch'])->name('news.search');
+Route::get('/news/search',[IndexController::class,'NewsSearch'])->name('news.search');
 Route::get('/reporter/{id}',[IndexController::class,'ReporterNews'])->name('reporter.all.news');
 Route::get('/clear-notifications', [ReviewController::class,'clearAllNotifications'])->name('clear.all.notifications');
 
