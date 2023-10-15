@@ -464,8 +464,8 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 </div>
 
 <div class="col-lg-4 col-md-4">
-<h2 class="themesBazar_cat01"> <a href="{{ url('news/category/'.$skip_cat_3->id.'/'.$skip_cat_3->category_slug) }}"> {{ $skip_cat_3->category_name }}</a> <span> <a href="{{ url('news/category/'.$skip_cat_1->id.'/'.$skip_cat_1->category_slug) }}"> More <i class="las la-arrow-circle-right"></i> </a></span> </h2>
-@foreach($skip_news_3 as $item)
+<h2 class="themesBazar_cat01"> <a href="{{ url('news/category/'.$skip_cat_5->id.'/'.$skip_cat_5->category_slug) }}"> {{ $skip_cat_5->category_name }}</a> <span> <a href="{{ url('news/category/'.$skip_cat_1->id.'/'.$skip_cat_1->category_slug) }}"> More <i class="las la-arrow-circle-right"></i> </a></span> </h2>
+@foreach($skip_news_5 as $item)
 @if($loop->index < 1)
 <div class="white-bg">
 <div class="secFive-image">
@@ -477,7 +477,7 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 @endif
 @endforeach
 
-@foreach($skip_news_3 as $item)
+@foreach($skip_news_5 as $item)
 @if($loop->index > 0)
 <div class="secFive-smallItem">
 <div class="secFive-smallImg">
