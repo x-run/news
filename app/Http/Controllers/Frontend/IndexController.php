@@ -32,6 +32,12 @@ class IndexController extends Controller
         $skip_cat_3 = Category::skip(3)->first();
         $skip_news_3 = NewsPost::where('status',1)->where('category_id',$skip_cat_3->id)->orderBy('id','DESC') ->inRandomOrder()->limit(5)->get();
 
+        $skip_cat_4 = Category::skip(4)->first();
+        $skip_news_4 = NewsPost::where('status',1)->where('category_id',$skip_cat_4->id)->orderBy('id','DESC') ->inRandomOrder()->limit(5)->get();
+
+        $skip_cat_5 = Category::skip(5)->first();
+        $skip_news_5 = NewsPost::where('status',1)->where('category_id',$skip_cat_5->id)->orderBy('id','DESC') ->inRandomOrder()->limit(5)->get();
+
         return view('frontend.index',compact('newnewspost','newspopular','skip_cat_0','skip_news_0','skip_cat_1','skip_news_1','skip_cat_2','skip_news_2','skip_cat_3','skip_news_3'));
     }//End Method
 

@@ -432,10 +432,10 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 <section class="section-five">
 <div class="container">
 <div class="row">
+
+
 <div class="col-lg-4 col-md-4">
-
 <h2 class="themesBazar_cat01"> <a href="{{ url('news/category/'.$skip_cat_1->id.'/'.$skip_cat_1->category_slug) }}"> {{ $skip_cat_2->category_name }}</a> <span> <a href="{{ url('news/category/'.$skip_cat_1->id.'/'.$skip_cat_1->category_slug) }}"> More <i class="las la-arrow-circle-right"></i> </a></span> </h2>
-
 @foreach($skip_news_2 as $item)
 @if($loop->index < 1)
 <div class="white-bg">
@@ -447,7 +447,6 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 </div>
 @endif
 @endforeach
-
 
 @foreach($skip_news_2 as $item)
 @if($loop->index > 0)
@@ -461,71 +460,74 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 </div>
 @endif
 @endforeach
-
 </div>
 </div>
 
-
-<div class="col-lg-4 col-md-4">
-
-<h2 class="themesBazar_cat01"> <a href=" "> INTERNATIONAL </a> <span> <a href=" ">More <i class="las la-arrow-circle-right"></i> </a></span> </h2>
-
-<div class="white-bg">
-<div class="secFive-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
-<div class="secFive-title">
-<a href=" ">How important are box office numbers</a>
-</div>
-</div>
-<div class="secFive-smallItem">
-<div class="secFive-smallImg">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
-<h5 class="secFive_title2">
-<a href=" ">How important are box office numbers</a>
-</h5>
-</div>
-</div>
-<div class="secFive-smallItem">
-<div class="secFive-smallImg">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
-<h5 class="secFive_title2">
-<a href=" ">How important are box office numbers</a>
-</h5>
-</div>
-</div>
-</div>
-</div>
 
 
 <div class="col-lg-4 col-md-4">
-
-<h2 class="themesBazar_cat01"> <a href=" "> SPORTS </a> <span> <a href=" "> More <i class="las la-arrow-circle-right"></i> </a></span> </h2>
-
+<h2 class="themesBazar_cat01"> <a href="{{ url('news/category/'.$skip_cat_1->id.'/'.$skip_cat_1->category_slug) }}"> {{ $skip_cat_2->category_name }}</a> <span> <a href="{{ url('news/category/'.$skip_cat_1->id.'/'.$skip_cat_1->category_slug) }}"> More <i class="las la-arrow-circle-right"></i> </a></span> </h2>
+@foreach($skip_news_3 as $item)
+@if($loop->index < 1)
 <div class="white-bg">
 <div class="secFive-image">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg"  ></a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
 <div class="secFive-title">
-<a href=" ">Britney Spears says "I don't believe in God anymore" </a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}" style="color: white;">{{ $item->news_title }}</a>
 </div>
 </div>
+@endif
+@endforeach
+
+@foreach($skip_news_4 as $item)
+@if($loop->index > 0)
 <div class="secFive-smallItem">
 <div class="secFive-smallImg">
-<a href=" "><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
 <h5 class="secFive_title2">
-<a href=" ">Britney Spears says "I don't believe in God anymore" </a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{ $item->news_title }}</a>
 </h5>
 </div>
 </div>
+@endif
+@endforeach
+</div>
+</div>
+
+
+
+<div class="col-lg-4 col-md-4">
+<h2 class="themesBazar_cat01"> <a href="{{ url('news/category/'.$skip_cat_1->id.'/'.$skip_cat_1->category_slug) }}"> {{ $skip_cat_2->category_name }}</a> <span> <a href="{{ url('news/category/'.$skip_cat_1->id.'/'.$skip_cat_1->category_slug) }}"> More <i class="las la-arrow-circle-right"></i> </a></span> </h2>
+@foreach($skip_news_2 as $item)
+@if($loop->index < 1)
+<div class="white-bg">
+<div class="secFive-image">
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
+<div class="secFive-title">
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}" style="color: white;">{{ $item->news_title }}</a>
+</div>
+</div>
+@endif
+@endforeach
+
+@foreach($skip_news_2 as $item)
+@if($loop->index > 0)
 <div class="secFive-smallItem">
 <div class="secFive-smallImg">
-<a href=" "  ><img class="lazyload" src="{{ asset('frontend/')}}assets/images/lazy.jpg" ></a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
 <h5 class="secFive_title2">
-<a href=" ">Britney Spears says "I don't believe in God anymore" </a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{ $item->news_title }}</a>
 </h5>
 </div>
 </div>
+@endif
+@endforeach
 </div>
 </div>
+
+
+
+
 
 </div>
 </div>
