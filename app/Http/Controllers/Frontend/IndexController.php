@@ -30,10 +30,10 @@ class IndexController extends Controller
         $skip_news_2 = NewsPost::where('status',1)->where('category_id',$skip_cat_2->id)->orderBy('id','DESC')->inRandomOrder()->limit(3)->get();
 
         $skip_cat_3 = Category::skip(3)->first();
-        $skip_news_3 = NewsPost::where('status',1)->where('category_id',$skip_cat_3->id)->orderBy('id','DESC') ->inRandomOrder()->limit(5)->get();
+        $skip_news_3 = NewsPost::where('status',1)->where('category_id',$skip_cat_3->id)->orderBy('id','DESC') ->inRandomOrder()->limit(3)->get();
 
         $skip_cat_4 = Category::skip(4)->first();
-        $skip_news_4 = NewsPost::where('status',1)->where('category_id',$skip_cat_4->id)->orderBy('id','DESC') ->inRandomOrder()->limit(5)->get();
+        $skip_news_4 = NewsPost::where('status',1)->where('category_id',$skip_cat_4->id)->orderBy('id','DESC') ->inRandomOrder()->limit(3)->get();
 
         
 
