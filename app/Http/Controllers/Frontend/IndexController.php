@@ -20,7 +20,7 @@ class IndexController extends Controller
         $newnewspost = NewsPost::orderBy('id','DESC')->limit(8)->get();
         $newspopular = NewsPost::orderBy('view_count','DESC')->limit(8)->get();
 
-        $skip_cat_0 = Category::skip(0)->first();
+        $skip_cat_0 = Category::skip(4)->first();
         $skip_news_0 = NewsPost::where('status',1)->where('category_id',$skip_cat_0->id)->orderBy('id','DESC')->inRandomOrder()->limit(5)->get();
 
         $skip_cat_1 = Category::skip(1)->first();
@@ -35,7 +35,7 @@ class IndexController extends Controller
         $skip_cat_4 = Category::skip(4)->first();
         $skip_news_4 = NewsPost::where('status',1)->where('category_id',$skip_cat_4->id)->orderBy('id','DESC') ->inRandomOrder()->limit(3)->get();
 
-        $skip_cat_4 = Category::skip(4)->first();
+        $skip_cat_4 = Category::skip(0)->first();
         $skip_news_4 = NewsPost::where('status',1)->where('category_id',$skip_cat_4->id)->orderBy('id','DESC') ->inRandomOrder()->limit(3)->get();
 
         $skip_cat_5 = Category::skip(5)->first();
