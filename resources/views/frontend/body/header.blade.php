@@ -35,6 +35,19 @@ $cdate = new DateTime();
             </div>
         </div>
     </div>
+
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F6S14E9D32"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F6S14E9D32');
+</script>
+
+
 </header>
 
 <div class="menu_section sticky" id="myHeader">
