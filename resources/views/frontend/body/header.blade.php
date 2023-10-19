@@ -47,6 +47,9 @@ $cdate = new DateTime();
   gtag('config', 'G-F6S14E9D32');
 </script>
 
+<!--lite youtube embed -->
+<link rel="stylesheet" type="text/css" href="basic/lite-yt-embed.css">
+<script src="basic/lite-yt-embed.js"></script>
 
 </header>
 

@@ -113,6 +113,7 @@ $live = App\Models\LiveTv::find(1);
 <div class="popup-wrpp">
 <div class="live_image">
 <iframe class="" src="{{ $live->live_url}}"  allowfullscreen="allowfullscreen" width="100%" height="400px"></iframe>
+<!--<lite-youtube videoid="{ $live->live_url}" playlabel="Play"></lite-youtube> -->
 <div data-mfp-src="#mymodal" class="live-icon modal-live"> <i class="las la-play"></i> </div>
 </div>
 <div class="live-popup"> 
@@ -722,7 +723,7 @@ $video_gallery = App\Models\VideoGallery::latest()->get();
 @foreach($video_gallery as $video)
 <div class="secFive-smallItem">
 <div class="secFive-smallImg">
-<iframe src="{{$video->video_url}}" frameborder="0" allowfullscreen></iframe>
+<iframe loading="lazy" src="{{$video->video_url}}" frameborder="0" allowfullscreen></iframe>
 <a href="{{ $video->video_url}}" class="home-video-icon popup"><i class="las la-video"></i></a>
 <h5 class="secFive_title2">
 <a href="{{$video->video_url}}" class="popup">{{ $video->video_title}}</a>
