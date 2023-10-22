@@ -112,7 +112,7 @@ $live = App\Models\LiveTv::find(1);
 </div>
 <div class="popup-wrpp">
 <div class="live_image">
-<iframe class="" src="{{ $live->live_url}}"  allowfullscreen="allowfullscreen" width="100%" height="400px"></iframe>
+<iframe loading="lazy" src="{{ $live->live_url}}"  allowfullscreen="allowfullscreen" width="100%" height="400px"></iframe>
 <!--<lite-youtube videoid="{ $live->live_url}" playlabel="Play"></lite-youtube> -->
 <div data-mfp-src="#mymodal" class="live-icon modal-live"> <i class="las la-play"></i> </div>
 </div>
