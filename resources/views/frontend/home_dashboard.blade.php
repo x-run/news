@@ -58,6 +58,8 @@ img.emoji {
 <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
 <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
+
+
 <script charset="utf-8" src="{{ asset('frontend/')}}assets/js/horizon_timeline.08c300ab95020b1109a05214ccb84dea.js"></script></head>
 <body class="home blog" oncontextmenu="return true" data-new-gr-c-s-check-loaded="14.1078.0" data-gr-ext-installed="">
  

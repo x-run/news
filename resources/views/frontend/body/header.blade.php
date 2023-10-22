@@ -22,7 +22,7 @@ $cdate = new DateTime();
                 <div class="header-social">
                     <ul>
                         <li> <a href="https://www.facebook.com/profile.php?id=61550691343308" target="_blank" title="facebook"><i class="lab la-facebook-f"></i> </a> </li>
-                        <li><a href="https://www.instagram.com/nakazatosyo/" target="_blank" title="instagram"><i class="lab la-instagram"> </i> </a></li>
+                        <li><a href="https://www.instagram.com/wunmedia/" target="_blank" title="instagram"><i class="lab la-instagram"> </i> </a></li>
 
                         @auth 
                         <li><a href="{{ route('user.logout')}}"><b> Logout </b></a> </li>
@@ -47,9 +47,10 @@ $cdate = new DateTime();
   gtag('config', 'G-F6S14E9D32');
 </script>
 
-<!--lite youtube embed -->
-<link rel="stylesheet" type="text/css" href="basic/lite-yt-embed.css">
-<script src="basic/lite-yt-embed.js"></script>
+<!-- lite youtube embed -->
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/lite-yt-embed.css')}}">
+<script defer src="{{ asset('frontend/assets/js/lite-yt-embed.js')}}"></script>
+
 
 </header>
 
