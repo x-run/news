@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\NewsPost;
 use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Auth;
 
 class NewsPostController extends Controller
 {
@@ -18,6 +19,14 @@ class NewsPostController extends Controller
         $allnews = NewsPost::latest()->get();
 
         return view('backend.news.all_news_post',compact('allnews'));
+    }
+
+    public function MyNewsPost(){
+    // 現在のログインユーザーのニュースデータを取得
+    $user = Auth::user();
+    $mynews = $user->newsPosts()->latest()->get();
+
+    return view('backend.news.my_news_post', compact('mynews'));
     }
 
     public function AddNewsPost(){

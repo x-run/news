@@ -44,4 +44,9 @@ class User extends Authenticatable
         return $this->hasMany(NewsPost::class, 'user_id');
     }
 
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+
 }

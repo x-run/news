@@ -85,7 +85,13 @@
                         <li>
                             <a href="{{ route('add.news.post')}}">Add News Post</a>
                         </li>
+                        <li>
+                            <a href="{{ route('my.news.post')}}">My News Post</a>
+                        </li>
 @else
+                        <li>
+                            <a href="{{ route('my.news.post')}}">My News Post</a>
+                        </li>
                         <li>
                             <a href="{{ route('all.news.post')}}">All News Post</a>
                         </li>
