@@ -136,7 +136,7 @@ class IndexController extends Controller
 
     public function ReporterNews($id){
         $reporter = User::findOrFail($id);
-        $news = NewsPost::where('user_id',$id)->paginate(8);
+        $news = NewsPost::where('user_id',$id)->latest()->paginate(8);
         Paginator::useBootstrap();
 
         return view('frontend.reporter.reporter_news_post',compact('reporter','news'));
